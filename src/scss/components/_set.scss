@@ -1,0 +1,71 @@
+@use '../utils/' as *;
+
+.set {
+  overflow: auto;
+  min-height: 450px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  // padding: 1rem;
+  margin: 1rem;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &__title {
+    margin: 0.5rem 0;
+  }
+
+  &__items {
+    @include flex(center, center);
+    height: 550px;
+    flex-flow: row wrap;
+    gap: 1rem 0;
+    cursor: pointer;
+
+    img {
+      height: 190px;
+      width: 100%;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+  }
+
+  &__scene {
+    &__top {
+      @include flex(space-between, center);
+      margin-bottom: 1rem;
+    }
+
+    &__item.active {
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        z-index: 20;
+        background-color: $light;
+      }
+    }
+
+    &__items {
+      @include flex(center, center);
+      max-height: 630px;
+      flex-flow: row wrap;
+      gap: 1rem 0;
+      cursor: pointer;
+
+      img {
+        height: 190px;
+        width: 100%;
+        border-radius: 10px;
+        object-fit: cover;
+        
+      }
+    }
+  }
+}

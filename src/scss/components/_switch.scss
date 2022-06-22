@@ -1,0 +1,58 @@
+@use '../utils/' as *;
+
+.toggle {
+  width: 60px;
+  height: 29px;
+  border-radius: 50px;
+  background-color: $light;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 1s;
+
+  &.night {
+    background-color: $dark;
+    transition: background-color 1s;
+
+    & .circle {
+      transform: translateX(30px);
+      transition: transform .5s;
+    }
+
+    & .icons {
+      transform: translate(-36px, -9.4px);
+      transition: transform 0.5s;
+    }
+  }
+
+  & .circle {
+    position: absolute;
+    height: 23px;
+    width: 23px;
+    border-radius: 50%;
+    background-color: #f2f2f2;
+    top: 3px;
+    left: 3px;
+    box-shadow: 0 0 5px #f2f2f2;
+    transition: transform 0.5s;
+
+  }
+
+
+  & .icons {
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    transform: translate(-30%, -40%);
+    transition: transform 0.5s;
+
+
+    & img {
+      width: 40px;
+      height: 20px;
+      filter: brightness(0) invert(1);
+      font-weight: 700;
+      outline: none;
+      background: none;
+    }
+  }
+}

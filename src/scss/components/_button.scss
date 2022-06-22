@@ -1,0 +1,13 @@
+// @use '../utils/' as *;
+
+.btn {
+  transition: all 0.2s linear;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 50%;
+  }
+}

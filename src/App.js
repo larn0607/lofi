@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react'
+
+import {
+  IntroScreen,
+  Background,
+  Audio,
+  Navbar,
+  Menu
+} from './components/'
+
+import './App.scss'
 
 function App() {
+
+    const [isIntro, setIsIntro] = useState(true)
+
+  useEffect(() => {
+    const time = setTimeout(() => {
+      setIsIntro(false)
+    }, 3000)
+
+    return () => {
+      clearTimeout(time)
+    }
+
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      {/* {isIntro ? <IntroScreen /> : ( */}
+        <>
+        <Navbar />
+        <Background />
+        <Menu />
+        <Audio />
+        </>
+      {/* )}  */}
+    </>
+  )
 }
 
 export default App;

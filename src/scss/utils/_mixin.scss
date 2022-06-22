@@ -1,0 +1,19 @@
+@use './variables' as *;
+
+@mixin flex($justifyContent: flex-start, $alignItem: flex-start) {
+  display: flex;
+  justify-content: $justifyContent;
+  align-items: $alignItem;
+}
+
+@mixin tablet {
+  @media screen and (max-width: $tablet-width) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: $mobile-width) {
+    @content;
+  }
+}

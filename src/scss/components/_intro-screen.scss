@@ -1,0 +1,6 @@
+@use '../utils/' as *;
+
+.intro-screen {
+  height: $screen-height;
+  @include flex(center, center);
+}

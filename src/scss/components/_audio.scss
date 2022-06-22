@@ -1,0 +1,30 @@
+@use '../utils/' as *;
+
+.audio {
+  position: fixed;
+  bottom: 2%;
+  left: 0;
+  right: 0;
+
+  &__wrapper {
+    @include flex(center, center);
+
+    &__text {
+      position: absolute;
+      left: 2%;
+      top: 50%;
+      transform: translateY(-50%);
+      color: white;
+      opacity: 0.5;
+    }
+
+    &__button {
+      @include flex(center, center);
+      gap: 0 1rem;
+
+      .play img, .pause img{
+        width: 80%;
+      }
+    }
+  }
+}

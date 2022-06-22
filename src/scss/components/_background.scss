@@ -1,0 +1,30 @@
+@use '../utils/' as *;
+
+.background {
+  position: absolute;
+  inset: 0;
+  z-index: 0; 
+
+  &__in {
+    position: absolute;
+    inset: 0;
+    opacity: 1;
+    transition: opacity .5s ease-in-out;
+  }
+
+  &__out {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
+  }
+
+  &__video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
