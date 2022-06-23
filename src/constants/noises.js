@@ -1,5 +1,5 @@
 import cityTraffic from '../assets/noises/city_traffic.mp3'
-import rainCity from '../assets/noises/city_traffic.mp3'
+import rainCity from '../assets/noises/rain_city.mp3'
 import fireplace from '../assets/noises/fireplace.mp3'
 import campfire from '../assets/noises/campfire.mp3'
 import forestNight from '../assets/noises/forest_night.mp3'

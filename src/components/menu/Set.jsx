@@ -7,7 +7,7 @@ import { SETS } from '../../constants/'
 import { Button } from '../'
 
 import { arrowLeftIcon } from '../../assets/icons'
-import { changeBackground } from '../../redux/slice/backgroundSlice'
+import { changeBackground } from '../../redux/slices/backgroundSlice'
 
 const Set = () => {
   const background = useSelector(state => state.background.background)
@@ -37,7 +37,7 @@ const Set = () => {
           <div className="set__items">
             {SETS.map(item => (
               <div
-                className="set__item"
+                className={`set__item${background.set === item.set ? ' active' : ''}`}
                 onClick={() => setSetMode(item.set)}
                 key={item.set}
               >

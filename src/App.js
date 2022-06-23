@@ -11,30 +11,24 @@ import {
 import './App.scss'
 
 function App() {
-
-    const [isIntro, setIsIntro] = useState(true)
+  const [isIntro, setIsIntro] = useState(true)
 
   useEffect(() => {
     const time = setTimeout(() => {
       setIsIntro(false)
-    }, 3000)
-
+    }, 1500)
     return () => {
       clearTimeout(time)
     }
-
   }, [])
 
   return (
     <>
-      {/* {isIntro ? <IntroScreen /> : ( */}
-        <>
+      <IntroScreen isIntro={isIntro} />
         <Navbar />
         <Background />
         <Menu />
         <Audio />
-        </>
-      {/* )}  */}
     </>
   )
 }

@@ -30,7 +30,6 @@ export const backgroundSlice = createSlice({
         show: !state.background.show,
         ...condition,
       }
-      console.log(newBg)
       const newSrc = SETS_BACKGROUND.find(item => 
         item.set === newBg.set &&
         item.scene === newBg.scene &&

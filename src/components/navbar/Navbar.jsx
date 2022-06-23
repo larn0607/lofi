@@ -6,7 +6,7 @@ import { Button } from '../'
 import Switch from './Switch'
 import Pixel from './Pixel'
 
-import { changeBackground, changePixelBackground } from '../../redux/slice/backgroundSlice'
+import { changeBackground, changePixelBackground } from '../../redux/slices/backgroundSlice'
 
 import { useSelector, useDispatch } from 'react-redux'
 
