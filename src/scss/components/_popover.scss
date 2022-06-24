@@ -1,0 +1,95 @@
+@use '../utils/' as *;
+
+// .background-popover {
+//   position: absolute;
+//   inset: 0;
+//   z-index: 0;
+// }
+
+.popover {
+  position: absolute;
+  width: 200px;
+  @include flex(flex-start, center);
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 100;
+
+  &:hover &__circle {
+    border-color: $light;
+
+    div {
+      background-color: $light;
+      opacity: 1;
+      transition: border-color 0.2s ease-in-out;
+    }
+  }
+
+  &:hover &__card {
+    transform: scale(1);
+  }
+
+  &__circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    @include flex(center, center);
+
+    & div {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background-color: #fff;
+      opacity: 0;
+      transition: opacity 0.2s ease-in-out;
+    }
+  }
+
+  &__card {
+    min-width: 120px;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    margin-top: 0.5rem;
+    background-color: #00000080;
+    @include flex(center, center);
+    flex-direction: column;
+    transform: scale(0);
+    transition: all 0.2s ease-in-out;
+
+    &__label {
+      font-weight: 500;
+    }
+
+    &__slider {
+      min-width: 150px;
+      border-radius: 0.5rem;
+      margin: 0.5rem 0;
+      padding-bottom: 0.5rem;
+
+      & > * {
+        margin: 0 18px;
+      }
+
+      &__track {
+        height: 12px;
+        border-radius: 50px;
+        background-color: $bg-mood;
+        &.valid {
+          background-color: $light;
+        }
+      }
+      
+      &__thumb {
+        width: 20px;
+        height: 20px;
+        transform: translateY(-20%);
+        border-radius:50%;
+        background-color:white;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+}
