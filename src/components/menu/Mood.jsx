@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState } from 'react'
 
 import ReactSlider from 'react-slider'
 
@@ -17,18 +17,15 @@ import {
   NOISE_ICONS,
   CHILL_MUSICS,
   JAZZY_MUSICS,
-  SLEEPY_MUSICS,
-  NOISES
+  SLEEPY_MUSICS
 } from '../../constants/'
 
-const Mood = () => {
+const Mood = ({ noisesRef }) => {
   const currentSong = useSelector(state => state.audio.currentSong)
   const volume = useSelector(state => state.audio.volumeValue)
-  const noisesVolume = useSelector(state => state.noises.noises)
+  const noisesVolume = useSelector(state => state.noises.noisesValue)
+  const isNoising = useSelector(state => state.noises.isNoising)
   const dispatch = useDispatch()
-
-  const noisesRef = useRef([])
-  const { current: noises } = noisesRef
 
   const initialMood = {
     sleepy: false,
@@ -86,12 +83,6 @@ const Mood = () => {
     }
   }
 
-  useEffect(() => {
-    noises.forEach((item) => {
-      item.volume = 0;
-    })
-  }, [noises])
-
   const handleChangeVolume = value => {
     dispatch(changeVolume(value / 100))
   }
@@ -146,17 +137,6 @@ const Mood = () => {
       </div>
 
       <div className="mood__noises">
-      <div className="mood__noises__audio">
-          {NOISES.map((item, index) => (
-            <audio
-              ref={el => noisesRef.current[index] = el}
-              key={index}
-              src={item}
-              autoPlay
-              loop
-            />
-          ))}
-        </div>
         <div className="mood__noises__title title">Background noises</div>
         <div className="mood__noises__items">
           {NOISE_ICONS.map((item, index) => (
@@ -165,16 +145,21 @@ const Mood = () => {
               <ReactSlider
                 className={`mood__noises__item__slider`}
                 defaultValue={0}
-                // onChange={value => {
-                //   handleChangeVolume(value)
-                // }}
+                value={noisesVolume[Object.keys(noisesVolume)[index]]}
+                onBeforeChange={() => {
+									const thisAudio = noisesRef.current[index];
+									if (thisAudio.paused) thisAudio.play();
+									if (thisAudio.muted) thisAudio.muted = false;
+								}}
                 onChange={value => {
                   const allEl = Object.keys(noisesVolume)
-                  dispatch(changeNoiseVolume({
-                    ...noisesVolume,
-                    [allEl[index]] : value
-                  }))
-                  noises[index].volume = value / 100;
+                  dispatch(
+                    changeNoiseVolume({
+                      ...noisesVolume,
+                      [allEl[index]]: value
+                    })
+                  )
+                  noisesRef.current[index].volume = value / 100
                 }}
                 renderTrack={(props, state) => (
                   <div
@@ -199,7 +184,6 @@ const Mood = () => {
             </div>
           ))}
         </div>
-
       </div>
     </div>
   )
@@ -208,9 +192,15 @@ const Mood = () => {
 const MoodItem = props => (
   <div className={`mood__item`} onClick={props.handleClick}>
     <div className={`mood__item__icon`}>
-      <img src={props.icon} alt="" className={`${props.isActive ? 'active' : ''}`} />
+      <img
+        src={props.icon}
+        alt=""
+        className={`${props.isActive ? 'active' : ''}`}
+      />
     </div>
-    <div className={`mood__item__label${props.isActive ? ' active' : ''}`}>{props.label}</div>
+    <div className={`mood__item__label${props.isActive ? ' active' : ''}`}>
+      {props.label}
+    </div>
   </div>
 )
 

@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  noises: {
-    cityTrafficVolume: 0,
-    rainCity: 0,
+  noisesValue: {
+    cityTrafficValue: 0,
+    rainCityValue: 0,
     fireplaceValue: 0,
     campfireValue: 0,
     forestNightValue: 0,
@@ -19,6 +19,24 @@ const initialState = {
     snowValue: 0,
     keyboardValue: 0
   },
+  isNoising: {
+    cityTraffic: false,
+    rainCity: false,
+    fireplace: false,
+    campfire: false,
+    forestNight: false,
+    rainForest: false,
+    waves: false,
+    fan: false,
+    summerStorm: false,
+    river: false,
+    birds: false,
+    peopleTalkInside: false,
+    wind: false,
+    ocean: false,
+    snow: false,
+    keyboard: false
+  }
 }
 
 const noisesSlice = createSlice({
@@ -26,14 +44,19 @@ const noisesSlice = createSlice({
   initialState,
   reducers: {
     changeNoiseVolume: (state, action) => {
-      state.noises = {
-        ...state.noises,
+      state.noisesValue = {
+        ...state.noisesValue,
+        ...action.payload
+      }
+    },
+    changeNoiseActive: (state, action) => {
+      state.isNoising = {
         ...action.payload
       }
     }
   }
 })
 
-export const { changeNoiseVolume } = noisesSlice.actions
+export const { changeNoiseVolume, changeNoiseActive } = noisesSlice.actions
 
 export default noisesSlice.reducer

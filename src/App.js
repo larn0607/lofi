@@ -5,10 +5,12 @@ import {
   Background,
   Audio,
   Navbar,
-  Menu
+  Menu,
+  BackgroundPopover
 } from './components/'
 
 import './App.scss'
+// import BackgroundPopover from './components/background-popover/BackgroundPopover'
 
 function App() {
   const [isIntro, setIsIntro] = useState(true)
@@ -26,6 +28,7 @@ function App() {
     <>
       <IntroScreen isIntro={isIntro} />
         <Navbar />
+        <BackgroundPopover />
         <Background />
         <Menu />
         <Audio />
