@@ -6,7 +6,7 @@ const initialState = {
     rainCityValue: 0,
     fireplaceValue: 0,
     campfireValue: 0,
-    forestNightValue: 0,
+    forestSoundValue: 0,
     rainForestValue: 0,
     wavesValue: 0,
     fanValue: 0,
@@ -24,7 +24,7 @@ const initialState = {
     rainCity: false,
     fireplace: false,
     campfire: false,
-    forestNight: false,
+    forestSound: false,
     rainForest: false,
     waves: false,
     fan: false,
@@ -53,10 +53,11 @@ const noisesSlice = createSlice({
       state.isNoising = {
         ...action.payload
       }
-    }
+    },
+    resetNoises: () => initialState
   }
 })
 
-export const { changeNoiseVolume, changeNoiseActive } = noisesSlice.actions
+export const { changeNoiseVolume, changeNoiseActive, resetNoises } = noisesSlice.actions
 
 export default noisesSlice.reducer

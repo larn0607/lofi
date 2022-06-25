@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 
 import Set from './Set'
 
@@ -6,32 +6,16 @@ import { moodIcon, setIcon, focusIcon } from '../../assets/icons'
 import Mood from './Mood'
 import Focus from './Focus'
 
-import { useSelector } from 'react-redux'
-
-import { NOISES } from '../../constants/'
-
 const Menu = () => {
   const initialTab = {
     mood: false,
     set: false,
     focus: false
   }
-  const noisesRef = useRef([])
   const [menuTab, setMenuTab] = useState(initialTab)
-  const { isNoising } = useSelector(state => state.noises)
 
   return (
     <>
-      {NOISES.map((item, index) => (
-          <audio
-            ref={el => (noisesRef.current[index] = el)}
-            key={index}
-            src={item}
-            autoPlay
-            loop
-            muted
-          />
-      ))}
       <div
         className={`menu${
           menuTab.mood || menuTab.set || menuTab.focus ? ' active' : ''
@@ -79,7 +63,7 @@ const Menu = () => {
                   : 'focus-menu'
               }`}
             >
-              {menuTab.mood && <Mood noisesRef={noisesRef} />}
+              {menuTab.mood && <Mood />}
               {menuTab.set && <Set />}
               {menuTab.focus && <Focus />}
             </div>

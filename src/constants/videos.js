@@ -400,6 +400,7 @@ const SETS_BACKGROUND = [
 		day: true,
 		rainy: false,
     snow: false,
+		pixel: false,
 		fire: false,
 		src: northernLightOut,
 	},

@@ -23,7 +23,7 @@ const styles = {
     enter: {
       label: 'Enter',
       styles: {
-        left: '60%',
+        left: '43%',
         top: '60%'
       }
     }
@@ -38,10 +38,10 @@ const styles = {
         top: '20%'
       }
     },
-    keyboard: {
-      noiseName: 'keyboard',
-      noiseValue: 'keyboardValue',
-      label: 'Keyboard',
+    peopleTalkInside: {
+      noiseName: 'peopleTalkInside',
+      noiseValue: 'peopleTalkInsideValue',
+      label: 'People Talk',
       styles: {
         left: '84%',
         top: '72%'
@@ -49,7 +49,8 @@ const styles = {
     }
   }
 }
-const BookCafe = ({ scene, handleActiveNoise, handleChangeScence }) => (
+
+const Cafe = ({ scene, handleActiveNoise, handleChangeScence }) => (
   <>
     {scene === 'scene1' && (
       <>
@@ -97,12 +98,12 @@ const BookCafe = ({ scene, handleActiveNoise, handleChangeScence }) => (
           }
         />
         <Popover
-          style={styles.scene2.keyboard.styles}
-          label={styles.scene2.keyboard.label}
+          style={styles.scene2.peopleTalkInside.styles}
+          label={styles.scene2.peopleTalkInside.label}
           onClick={() =>
             handleActiveNoise(
-              styles.scene2.keyboard.noiseValue,
-              styles.scene2.keyboard.noiseName
+              styles.scene2.peopleTalkInside.noiseValue,
+              styles.scene2.peopleTalkInside.noiseName
             )
           }
         />
@@ -111,4 +112,4 @@ const BookCafe = ({ scene, handleActiveNoise, handleChangeScence }) => (
   </>
 )
 
-export default BookCafe
+export default Cafe
