@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useContext } from 'react'
 
 import { nextIcon, pauseIcon, playIcon, prevIcon } from '../assets/icons'
 import { Button } from './'
@@ -6,17 +6,30 @@ import { Button } from './'
 import { useSelector, useDispatch } from 'react-redux'
 import { setCurrentSong, setIsPlaying } from '../redux/slices/audioSlice'
 
+import { NOISES } from '../constants/'
+
+import { AudioContext } from '../context/AudioProvider'
+
 const Audio = () => {
+  const noisesRefs = useContext(AudioContext)
+  // console.log(noisesRefs)
   const audioRef = useRef(null)
   const currentSong = useSelector(state => state.audio.currentSong)
   const volumeValue = useSelector(state => state.audio.volumeValue)
   const isPlaying = useSelector(state => state.audio.isPlaying)
+  const { noisesValue } = useSelector(state => state.noises)
   const dispatch = useDispatch()
 
 
   useEffect(() => {
     audioRef.current.volume = volumeValue
   }, [volumeValue])
+
+  useEffect(() => {
+    noisesRefs.current.forEach((item, index) => {
+      item.volume = noisesValue[Object.keys(noisesValue)[index]] / 100
+    })
+  }, [noisesRefs, noisesValue])
 
   const handlePlay = () => {
     dispatch(setIsPlaying(true))
@@ -101,6 +114,17 @@ const Audio = () => {
             }))
           }}
         />
+      </div>
+      <div className="audio">
+      {NOISES.map((item, index) => (
+          <audio
+            ref={el => (noisesRefs.current[index] = el)}
+            key={index}
+            src={item}
+            autoPlay
+            loop
+          />
+      ))}
       </div>
     </>
   )

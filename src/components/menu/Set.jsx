@@ -8,28 +8,48 @@ import { Button } from '../'
 
 import { arrowLeftIcon } from '../../assets/icons'
 import { changeBackground } from '../../redux/slices/backgroundSlice'
+import { resetNoises } from '../../redux/slices/noisesSlice'
 
 const Set = () => {
   const background = useSelector(state => state.background.background)
   const dispatch = useDispatch()
 
   const [setMode, setSetMode] = useState()
+  console.log(background)
 
   const handleChangeBackground = item => {
-    if(background.set === item.set && background.scene === item.scene) {
+    if (background.set === setMode && background.scene === item.scene) {
       return
     }
-    dispatch(
-      changeBackground({
-        set: setMode,
-        scene: item.scene,
-        day: background.set === setMode ? background.day : true,
-        rainy: background.set === setMode ? background.rainy : false,
-        snow: background.set === setMode ? background.snow : false,
-        pixel: background.set === setMode ? background.pixel : false,
-        fire: background.set === setMode ? background.fire : false,
-      })
+    if (setMode === 'van' && background.scene !== item.scene) {
+      dispatch(
+        changeBackground({
+          set: setMode,
+          scene: item.scene,
+          day: background.set === setMode ? background.day : true,
+          rainy: false,
+          snow: background.set === setMode ? background.snow : false,
+          pixel: background.set === setMode ? background.pixel : false,
+          fire: false
+        })
       )
+      dispatch(resetNoises())
+    } else {
+      dispatch(
+        changeBackground({
+          set: setMode,
+          scene: item.scene,
+          day: background.set === setMode ? background.day : true,
+          rainy: background.set === setMode ? background.rainy : false,
+          snow: background.set === setMode ? background.snow : false,
+          pixel: background.set === setMode ? background.pixel : false,
+          fire: background.set === setMode ? background.fire : false
+        })
+      )
+    }
+    if (background.set !== setMode) {
+      dispatch(resetNoises())
+    }
   }
 
   return (
@@ -40,7 +60,9 @@ const Set = () => {
           <div className="set__items">
             {SETS.map(item => (
               <div
-                className={`set__item${background.set === item.set ? ' active' : ''}`}
+                className={`set__item${
+                  background.set === item.set ? ' active' : ''
+                }`}
                 onClick={() => setSetMode(item.set)}
                 key={item.set}
               >
@@ -67,7 +89,6 @@ const Set = () => {
                     ? ' active'
                     : ''
                 }`}
-                // onClick={() => setSetMode(item.set)}
                 onClick={() => handleChangeBackground(item)}
               >
                 <img src={item.img} alt="scene" />

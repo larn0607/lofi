@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 
 import ReactSlider from 'react-slider'
 
@@ -12,16 +12,25 @@ import {
 
 import { useSelector, useDispatch } from 'react-redux'
 import { setCurrentSong, changeVolume } from '../../redux/slices/audioSlice'
-import { changeNoiseVolume } from '../../redux/slices/noisesSlice'
+import {
+  changeNoiseVolume,
+  changeNoiseActive
+} from '../../redux/slices/noisesSlice'
+
+import { AudioContext } from '../../context/AudioProvider'
+
 import {
   NOISE_ICONS,
   CHILL_MUSICS,
   JAZZY_MUSICS,
   SLEEPY_MUSICS
 } from '../../constants/'
+import { changeBackground } from '../../redux/slices/backgroundSlice'
 
-const Mood = ({ noisesRef }) => {
+const Mood = () => {
+  const noisesRefs = useContext(AudioContext)
   const currentSong = useSelector(state => state.audio.currentSong)
+  const background = useSelector(state => state.background.background)
   const volume = useSelector(state => state.audio.volumeValue)
   const noisesVolume = useSelector(state => state.noises.noisesValue)
   const isNoising = useSelector(state => state.noises.isNoising)
@@ -147,19 +156,38 @@ const Mood = ({ noisesRef }) => {
                 defaultValue={0}
                 value={noisesVolume[Object.keys(noisesVolume)[index]]}
                 onBeforeChange={() => {
-									const thisAudio = noisesRef.current[index];
-									if (thisAudio.paused) thisAudio.play();
-									if (thisAudio.muted) thisAudio.muted = false;
-								}}
+                  const thisAudio = noisesRefs.current[index]
+                  if (thisAudio.paused) thisAudio.play()
+                }}
                 onChange={value => {
-                  const allEl = Object.keys(noisesVolume)
+                  const noisesVolumeArr = Object.keys(noisesVolume)
+                  const noisesActiveArr = Object.keys(isNoising)
+                  console.log(isNoising[noisesActiveArr[index]])
                   dispatch(
                     changeNoiseVolume({
                       ...noisesVolume,
-                      [allEl[index]]: value
+                      [noisesVolumeArr[index]]: value
                     })
                   )
-                  noisesRef.current[index].volume = value / 100
+                  dispatch(
+                    changeNoiseActive({
+                      ...isNoising,
+                      [noisesActiveArr[index]]: value === 0 ? false : true
+                    })
+                  )
+
+                  // if (
+                  //   ['chill_vibes', 'cafe', 'book_cafe', 'forest'].includes(
+                  //     background.set
+                  //   )
+                  // ) {
+                  //   dispatch(
+                  //     changeBackground({
+                  //       rainy: value === 0 ? false : true
+                  //     })
+                  //   )
+                  // }
+                  noisesRefs.current[index].volume = value / 100
                 }}
                 renderTrack={(props, state) => (
                   <div
