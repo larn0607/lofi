@@ -174,6 +174,26 @@ const Mood = () => {
                       [noisesActiveArr[index]]: value === 0 ? false : true
                     })
                   )
+                  if(noisesRefs.current[index] === noisesRefs.current[14]) {
+                    if(background.set === 'northern_light') {
+                      if (value === 0) {
+                        dispatch(
+                          changeBackground({
+                            snow: false
+                          })
+                        )
+                      } else {
+                        if (noisesRefs.current[14].volume) return
+
+                        dispatch(
+                          changeBackground({
+                            snow: true
+                          })
+                        )
+                      }
+                    }
+                  }
+                  else return
                   if (noisesRefs.current[index] === noisesRefs.current[1]) {
                     if (
                       !['chill_vibes', 'cafe', 'book_cafe'].includes(
