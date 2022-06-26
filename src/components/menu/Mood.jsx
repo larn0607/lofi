@@ -162,7 +162,6 @@ const Mood = () => {
                 onChange={value => {
                   const noisesVolumeArr = Object.keys(noisesVolume)
                   const noisesActiveArr = Object.keys(isNoising)
-                  console.log(isNoising[noisesActiveArr[index]])
                   dispatch(
                     changeNoiseVolume({
                       ...noisesVolume,
@@ -175,18 +174,81 @@ const Mood = () => {
                       [noisesActiveArr[index]]: value === 0 ? false : true
                     })
                   )
+                  if (noisesRefs.current[index] === noisesRefs.current[1]) {
+                    if (
+                      !['chill_vibes', 'cafe', 'book_cafe'].includes(
+                        background.set
+                      )
+                    )
+                      return
+                    else {
+                      if (value === 0) {
+                        dispatch(
+                          changeBackground({
+                            rainy: false
+                          })
+                        )
+                      } else {
+                        if (noisesRefs.current[1].volume) return
 
-                  // if (
-                  //   ['chill_vibes', 'cafe', 'book_cafe', 'forest'].includes(
-                  //     background.set
-                  //   )
-                  // ) {
-                  //   dispatch(
-                  //     changeBackground({
-                  //       rainy: value === 0 ? false : true
-                  //     })
-                  //   )
-                  // }
+                        dispatch(
+                          changeBackground({
+                            rainy: true
+                          })
+                        )
+                      }
+                    }
+                  }
+                  if (noisesRefs.current[index] === noisesRefs.current[5]) {
+                    if (
+                      !['forest', 'van'].includes(
+                        background.set
+                      )
+                    )
+                      return
+                    else {
+                      if (value === 0) {
+                        dispatch(
+                          changeBackground({
+                            rainy: false
+                          })
+                        )
+                      } else {
+                        if (noisesRefs.current[1].volume) return
+
+                        dispatch(
+                          changeBackground({
+                            rainy: true
+                          })
+                        )
+                      }
+                    }
+                  }
+                  if (noisesRefs.current[index] === noisesRefs.current[8]) {
+                    if (
+                      !['ocean', 'summer'].includes(
+                        background.set
+                      )
+                    )
+                      return
+                    else {
+                      if (value === 0) {
+                        dispatch(
+                          changeBackground({
+                            rainy: false
+                          })
+                        )
+                      } else {
+                        if (noisesRefs.current[1].volume) return
+
+                        dispatch(
+                          changeBackground({
+                            rainy: true
+                          })
+                        )
+                      }
+                    }
+                  }
                   noisesRefs.current[index].volume = value / 100
                 }}
                 renderTrack={(props, state) => (

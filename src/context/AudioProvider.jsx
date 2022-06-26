@@ -3,6 +3,7 @@ import { useRef, createContext } from 'react'
 const AudioContext = createContext()
 
 const AudioProvider = ({children}) => {
+
   const noisesRefs = useRef([])
 
   return (

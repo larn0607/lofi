@@ -1,10 +1,8 @@
 import { useState } from 'react'
 
-import Set from './Set'
-
 import { moodIcon, setIcon, focusIcon } from '../../assets/icons'
-import Mood from './Mood'
-import Focus from './Focus'
+
+import { Set, Mood, Focus } from '../'
 
 const Menu = () => {
   const initialTab = {

@@ -25,7 +25,6 @@ export const backgroundSlice = createSlice({
   reducers: {
     changeBackground: (state, action) => {
       const condition = action.payload
-      console.log(condition)
       const newBg = {
         ...state.background,
         show: !state.background.show,

@@ -1,8 +1,8 @@
 // import ReactSlider from "react-slider"
 
 const Popover = props => (
-    <div className="popover" style={props.style} onClick={props.onClick}>
-    <div className="popover__circle">
+    <div className="popover" style={props.style}>
+    <div className="popover__circle" onClick={props.onClick}>
       <div></div>
     </div>
     <div className="popover__card">

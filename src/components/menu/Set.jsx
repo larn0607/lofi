@@ -15,7 +15,6 @@ const Set = () => {
   const dispatch = useDispatch()
 
   const [setMode, setSetMode] = useState()
-  console.log(background)
 
   const handleChangeBackground = item => {
     if (background.set === setMode && background.scene === item.scene) {

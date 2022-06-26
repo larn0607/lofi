@@ -2,7 +2,11 @@ import { useContext } from 'react'
 
 import { useDispatch, useSelector } from 'react-redux'
 
-import { changeBackground, changeSnowBackground, changeCampfireBackground } from '../../redux/slices/backgroundSlice'
+import {
+  changeBackground,
+  changeSnowBackground,
+  changeCampfireBackground
+} from '../../redux/slices/backgroundSlice'
 import {
   changeNoiseActive,
   changeNoiseVolume
@@ -10,15 +14,17 @@ import {
 
 import { AudioContext } from '../../context/AudioProvider'
 
-import BookCafe from './BookCafe'
-import ChillVibes from './ChillVibes'
-import NorthernLight from './NorthernLight'
-import LofiDesk from './LofiDesk'
-import Forest from './Forest'
-import Cafe from './Cafe'
-import Van from './Van'
-import Summer from './Summer'
-import Ocean from './Ocean'
+import {
+  BookCafe,
+  ChillVibes,
+  NorthernLight,
+  LofiDesk,
+  Forest,
+  Cafe,
+  Van,
+  Summer,
+  Ocean
+} from '../'
 
 const BackgroundPopover = () => {
   const background = useSelector(state => state.background.background)
@@ -32,7 +38,7 @@ const BackgroundPopover = () => {
     dispatch(
       changeNoiseVolume({
         ...noisesValue,
-        [volume]: !isNoising[type] ? 80 : 0
+        [volume]: !isNoising[type] ? 50 : 0
       })
     )
     dispatch(
@@ -41,21 +47,25 @@ const BackgroundPopover = () => {
         [type]: !isNoising[type] ? true : false
       })
     )
-    if (type === 'rainCity' || type === 'summerStorm' || type === 'rainForest') {
+    if (
+      type === 'rainCity' ||
+      type === 'summerStorm' ||
+      type === 'rainForest'
+    ) {
       dispatch(
         changeBackground({
           rainy: !background.rainy
         })
       )
     }
-    if(type === 'snow') {
+    if (type === 'snow') {
       dispatch(
         changeSnowBackground({
           snow: !background.snow
         })
       )
     }
-    if(type === 'campfire') {
+    if (type === 'campfire') {
       dispatch(
         changeCampfireBackground({
           fire: !background.fire
@@ -79,32 +89,52 @@ const BackgroundPopover = () => {
     <div className="background-popover">
       {background.set === 'book_cafe' && (
         <>
-          <BookCafe scene={background.scene} handleActiveNoise={handleActiveNoise} handleChangeScence={handleChangeScence} />
+          <BookCafe
+            scene={background.scene}
+            handleActiveNoise={handleActiveNoise}
+            handleChangeScence={handleChangeScence}
+          />
         </>
       )}
       {background.set === 'chill_vibes' && (
         <>
-          <ChillVibes scene={background.scene} handleActiveNoise={handleActiveNoise} />
+          <ChillVibes
+            scene={background.scene}
+            handleActiveNoise={handleActiveNoise}
+          />
         </>
       )}
       {background.set === 'northern_light' && (
         <>
-          <NorthernLight scene={background.scene} handleActiveNoise={handleActiveNoise} />
+          <NorthernLight
+            scene={background.scene}
+            handleActiveNoise={handleActiveNoise}
+          />
         </>
       )}
       {background.set === 'lofi_desk' && (
         <>
-          <LofiDesk scene={background.scene} handleActiveNoise={handleActiveNoise} />
+          <LofiDesk
+            scene={background.scene}
+            handleActiveNoise={handleActiveNoise}
+          />
         </>
       )}
       {background.set === 'forest' && (
         <>
-          <Forest scene={background.scene} handleActiveNoise={handleActiveNoise} />
+          <Forest
+            scene={background.scene}
+            handleActiveNoise={handleActiveNoise}
+          />
         </>
       )}
       {background.set === 'cafe' && (
         <>
-          <Cafe scene={background.scene} handleActiveNoise={handleActiveNoise} />
+          <Cafe
+            scene={background.scene}
+            handleActiveNoise={handleActiveNoise}
+            handleChangeScence={handleChangeScence}
+          />
         </>
       )}
       {background.set === 'van' && (
@@ -114,12 +144,18 @@ const BackgroundPopover = () => {
       )}
       {background.set === 'ocean' && (
         <>
-          <Ocean scene={background.scene} handleActiveNoise={handleActiveNoise} />
+          <Ocean
+            scene={background.scene}
+            handleActiveNoise={handleActiveNoise}
+          />
         </>
       )}
       {background.set === 'summer' && (
         <>
-          <Summer scene={background.scene} handleActiveNoise={handleActiveNoise} />
+          <Summer
+            scene={background.scene}
+            handleActiveNoise={handleActiveNoise}
+          />
         </>
       )}
     </div>
