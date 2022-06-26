@@ -35,6 +35,7 @@ const Menu = () => {
             }
           />
           <MenuItem
+            className="bottom"
             iconSrc={setIcon}
             isActive={menuTab.set}
             handleActive={() =>
@@ -44,7 +45,6 @@ const Menu = () => {
             }
           />
           {/* <MenuItem
-            className="bottom"
             iconSrc={focusIcon}
             isActive={menuTab.focus}
             handleActive={() =>
