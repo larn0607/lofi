@@ -31,6 +31,7 @@ import twitterIcon from './twitter.svg';
 import volumeMaxIcon from './volume-max.svg';
 import volumeMinIcon from './volume-min.svg';
 import xIcon from './x.svg';
+import phoneIcon from './phone.svg';
 
 import cityIcon from './noises/city.svg';
 import cityRainIcon from './noises/city-rain.svg';
@@ -103,5 +104,6 @@ export {
 	snowIcon,
 	keyboardIcon,
 	pixel,
-	pixelHover
+	pixelHover,
+	phoneIcon
 };

@@ -3,6 +3,7 @@ export { default as Background } from './Background'
 export { default as Button } from './Button'
 export { default as IntroScreen } from './IntroScreen'
 export { default as Navbar } from './navbar/Navbar'
+export { default as Overlay } from './Overlay'
 
 export { default as Menu } from './menu/Menu'
 export { default as Set } from './menu/Set'

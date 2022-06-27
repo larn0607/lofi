@@ -1,0 +1,20 @@
+@use '../utils/' as *;
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 999;
+  background-color: #000a;
+  backdrop-filter: blur(9px);
+  @include flex(center, center);
+  flex-direction: column;
+  gap: 2rem 0;
+
+  &__text {
+    font-size: 14px;
+    
+    & span {
+      color: $light;
+    }
+  }
+}

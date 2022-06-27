@@ -6,7 +6,8 @@ import {
   Audio,
   Navbar,
   Menu,
-  BackgroundPopover
+  BackgroundPopover,
+  Overlay
 } from './components/'
 
 import './App.scss'
@@ -26,6 +27,7 @@ function App() {
   return (
     <>
       <IntroScreen isIntro={isIntro} />
+      {window.innerWidth < '1024' && <Overlay />}
       <Navbar />
       <BackgroundPopover />
       <Background />
