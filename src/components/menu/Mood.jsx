@@ -193,7 +193,6 @@ const Mood = () => {
                       }
                     }
                   }
-                  else return
                   if (noisesRefs.current[index] === noisesRefs.current[1]) {
                     if (
                       !['chill_vibes', 'cafe', 'book_cafe'].includes(
