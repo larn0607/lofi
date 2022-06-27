@@ -1,28 +1,28 @@
 import { useState } from 'react'
 
-import { moodIcon, setIcon, 
+import {
+  moodIcon,
+  setIcon
   // focusIcon
- } from '../../assets/icons'
+} from '../../assets/icons'
 
-import { Set, Mood, 
+import {
+  Set,
+  Mood
   // Focus
- } from '../'
+} from '../'
 
 const Menu = () => {
   const initialTab = {
     mood: false,
-    set: false,
+    set: false
     // focus: false
   }
   const [menuTab, setMenuTab] = useState(initialTab)
 
   return (
     <>
-      <div
-        className={`menu${
-          menuTab.mood || menuTab.set ? ' active' : ''
-        }`}
-      >
+      <div className={`menu${menuTab.mood || menuTab.set ? ' active' : ''}`}>
         <div className="menu__items">
           <MenuItem
             className="top"
@@ -45,6 +45,7 @@ const Menu = () => {
             }
           />
           {/* <MenuItem
+              className="bottom"
             iconSrc={focusIcon}
             isActive={menuTab.focus}
             handleActive={() =>
@@ -54,18 +55,13 @@ const Menu = () => {
             }
           /> */}
         </div>
-        {(menuTab.mood || menuTab.set 
-        // || menuTab.focus
-        ) && (
+        {(menuTab.mood || menuTab.set) && (
+          // || menuTab.focus
           <>
             <div
               className={`menu__tab ${
-                menuTab.mood
-                  ? 'mood-menu'
-                  : menuTab.set
-                  ? 'set-menu'
-                  : null
-                  // : 'focus-menu'
+                menuTab.mood ? 'mood-menu' : menuTab.set ? 'set-menu' : null
+                // : 'focus-menu'
               }`}
             >
               {menuTab.mood && <Mood />}
