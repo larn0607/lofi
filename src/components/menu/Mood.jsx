@@ -8,18 +8,22 @@ import {
   chillIcon,
   volumeMinIcon,
   volumeMaxIcon,
-  // pauseMusicIcon,
-  // playMusicIcon
 } from '../../assets/icons'
 
 import { useSelector, useDispatch } from 'react-redux'
-import { setCurrentSong, changeVolume, setIsPlaying } from '../../redux/slices/audioSlice'
+import {
+  setCurrentSong,
+  changeVolume,
+  setIsPlaying
+} from '../../redux/slices/audioSlice'
 
 import {
   CHILL_MUSICS,
   JAZZY_MUSICS,
   SLEEPY_MUSICS,
-  // HOLIDAY
+  HOLIDAY,
+  POP_80S,
+  ROMANCE
 } from '../../constants/'
 
 const Mood = ({ initialMood, setMood, mood }) => {
@@ -27,68 +31,98 @@ const Mood = ({ initialMood, setMood, mood }) => {
   const volume = useSelector(state => state.audio.volumeValue)
   const dispatch = useDispatch()
 
-  const handleActiveMood = useCallback(type => {
-    let randomIndex
-    if(mood[type]) return
+  const handleActiveMood = useCallback(
+    type => {
+      let randomIndex
+      if (mood[type]) return
 
-    switch (type) {
-      case 'sleepy':
-        setMood({ ...initialMood, sleepy: true })
-        randomIndex = Math.floor(Math.random() * SLEEPY_MUSICS.length)
-        dispatch(
-          setCurrentSong({
-            ...currentSong,
-            list: SLEEPY_MUSICS,
-            index: randomIndex,
-            src: SLEEPY_MUSICS[randomIndex]
-          })
-        )
-        break
-      case 'jazzy':
-        setMood({ ...initialMood, jazzy: true })
-        randomIndex = Math.floor(Math.random() * JAZZY_MUSICS.length)
-        dispatch(
-          setCurrentSong({
-            ...currentSong,
-            list: JAZZY_MUSICS,
-            index: randomIndex,
-            src: JAZZY_MUSICS[randomIndex]
-          })
-        )
-        break
-      case 'chill':
-        setMood({ ...initialMood, chill: true })
-        randomIndex = Math.floor(Math.random() * CHILL_MUSICS.length)
-        dispatch(
-          setCurrentSong({
-            ...currentSong,
-            list: CHILL_MUSICS,
-            index: randomIndex,
-            src: CHILL_MUSICS[randomIndex]
-          })
-        )
-        break
-      // case 'holiday':
-      //   setMood({ ...initialMood, holiday: true })
-      //   randomIndex = Math.floor(Math.random() * HOLIDAY.length)
-      //   dispatch(
-      //     setCurrentSong({
-      //       ...currentSong,
-      //       list: HOLIDAY,
-      //       index: randomIndex,
-      //       src: HOLIDAY[randomIndex]
-      //     })
-      //   )
-      //   break
-      default:
-        break
-    }
-    dispatch(setIsPlaying(true))
-  }, [currentSong, dispatch, initialMood, mood, setMood])
+      switch (type) {
+        case 'sleepy':
+          setMood({ ...initialMood, sleepy: true })
+          randomIndex = Math.floor(Math.random() * SLEEPY_MUSICS.length)
+          dispatch(
+            setCurrentSong({
+              ...currentSong,
+              list: SLEEPY_MUSICS,
+              index: randomIndex,
+              src: SLEEPY_MUSICS[randomIndex]
+            })
+          )
+          break
+        case 'jazzy':
+          setMood({ ...initialMood, jazzy: true })
+          randomIndex = Math.floor(Math.random() * JAZZY_MUSICS.length)
+          dispatch(
+            setCurrentSong({
+              ...currentSong,
+              list: JAZZY_MUSICS,
+              index: randomIndex,
+              src: JAZZY_MUSICS[randomIndex]
+            })
+          )
+          break
+        case 'chill':
+          setMood({ ...initialMood, chill: true })
+          randomIndex = Math.floor(Math.random() * CHILL_MUSICS.length)
+          dispatch(
+            setCurrentSong({
+              ...currentSong,
+              list: CHILL_MUSICS,
+              index: randomIndex,
+              src: CHILL_MUSICS[randomIndex]
+            })
+          )
+          break
+        case 'holiday':
+          setMood({ ...initialMood, holiday: true })
+          randomIndex = Math.floor(Math.random() * HOLIDAY.length)
+          dispatch(
+            setCurrentSong({
+              ...currentSong,
+              list: HOLIDAY,
+              index: randomIndex,
+              src: HOLIDAY[randomIndex]
+            })
+          )
+          break
+        case 'romance':
+          setMood({ ...initialMood, romance: true })
+          randomIndex = Math.floor(Math.random() * ROMANCE.length)
+          dispatch(
+            setCurrentSong({
+              ...currentSong,
+              list: ROMANCE,
+              index: randomIndex,
+              src: ROMANCE[randomIndex]
+            })
+          )
+          break
+        case 'pop80s':
+          setMood({ ...initialMood, pop80s: true })
+          randomIndex = Math.floor(Math.random() * POP_80S.length)
+          dispatch(
+            setCurrentSong({
+              ...currentSong,
+              list: POP_80S,
+              index: randomIndex,
+              src: POP_80S[randomIndex]
+            })
+          )
+          break
+        default:
+          break
+      }
+      dispatch(setIsPlaying(true))
+    },
+    [currentSong, dispatch, initialMood, mood, setMood]
+  )
 
-  const handleChangeVolume = useCallback(value => {
-    dispatch(changeVolume(value / 100))
-  }, [dispatch])
+  const handleChangeVolume = useCallback(
+    value => {
+      dispatch(changeVolume(value / 100))
+    },
+    [dispatch]
+  )
   return (
     <div className="mood">
       <div className="mood__title title">Mood</div>
@@ -138,18 +172,26 @@ const Mood = ({ initialMood, setMood, mood }) => {
           <img src={volumeMaxIcon} alt="" />
         </div>
       </div>
-      {/* <div className="music">
+      <div className="music">
         <div className="music__title title">Other Music Tracks</div>
         <div className="music__items">
           <MusicItem
             label="Holiday"
             isActive={mood.holiday}
-            playMusicIcon={playMusicIcon}
-            pauseMusicIcon={pauseMusicIcon} 
             handleClick={() => handleActiveMood('holiday')}
           />
+          <MusicItem
+            label="Romance"
+            isActive={mood.romance}
+            handleClick={() => handleActiveMood('romance')}
+          />
+          <MusicItem
+            label="80s Japanese Night City Pop"
+            isActive={mood.pop80s}
+            handleClick={() => handleActiveMood('pop80s')}
+          />
         </div>
-      </div> */}
+      </div>
     </div>
   )
 }
@@ -169,12 +211,12 @@ const MoodItem = props => (
   </div>
 )
 
-// const MusicItem = props => (
-//   <div className="music__item" onClick={props.handleClick}>
-//     <div className={`music__item__label${props.isActive ? ' active' : ''}`}>
-//       {props.label}
-//     </div>
-//   </div>
-// )
+const MusicItem = props => (
+  <div className="music__item" onClick={props.handleClick}>
+    <div className={`music__item__label${props.isActive ? ' active' : ''}`}>
+      {props.label}
+    </div>
+  </div>
+)
 
 export default memo(Mood)
