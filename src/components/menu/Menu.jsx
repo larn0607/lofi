@@ -1,28 +1,42 @@
 import { useState } from 'react'
 
-import {
-  moodIcon,
-  setIcon
-  // focusIcon
-} from '../../assets/icons'
+import { moodIcon, setIcon, templateIcon } from '../../assets/icons'
 
 import {
   Set,
-  Mood
+  Mood,
+  Noise
   // Focus
 } from '../'
 
 const Menu = () => {
   const initialTab = {
     mood: false,
-    set: false
+    set: false,
+    noise: false
     // focus: false
+  }
+
+  const initialMood = {
+    sleepy: false,
+    jazzy: false,
+    chill: false,
+    holiday: false
   }
   const [menuTab, setMenuTab] = useState(initialTab)
 
+  const [mood, setMood] = useState({
+    ...initialMood,
+    chill: true
+  })
+
   return (
     <>
-      <div className={`menu${menuTab.mood || menuTab.set ? ' active' : ''}`}>
+      <div
+        className={`menu${
+          menuTab.mood || menuTab.set || menuTab.noise ? ' active' : ''
+        }`}
+      >
         <div className="menu__items">
           <MenuItem
             className="top"
@@ -32,6 +46,16 @@ const Menu = () => {
               menuTab.mood
                 ? setMenuTab(initialTab)
                 : setMenuTab({ ...initialTab, mood: true })
+            }
+          />
+          <MenuItem
+            // className="top"
+            iconSrc={templateIcon}
+            isActive={menuTab.noise}
+            handleActive={() =>
+              menuTab.noise
+                ? setMenuTab(initialTab)
+                : setMenuTab({ ...initialTab, noise: true })
             }
           />
           <MenuItem
@@ -55,18 +79,22 @@ const Menu = () => {
             }
           /> */}
         </div>
-        {(menuTab.mood || menuTab.set) && (
-          // || menuTab.focus
+        {(menuTab.mood || menuTab.set || menuTab.noise) && (
           <>
             <div
               className={`menu__tab ${
-                menuTab.mood ? 'mood-menu' : menuTab.set ? 'set-menu' : null
-                // : 'focus-menu'
+                menuTab.mood
+                  ? 'mood-menu'
+                  : menuTab.set
+                  ? 'set-menu'
+                  : 'noise-menu'
               }`}
             >
-              {menuTab.mood && <Mood />}
+              {menuTab.mood && (
+                <Mood initialMood={initialMood} mood={mood} setMood={setMood} />
+              )}
               {menuTab.set && <Set />}
-              {/* {menuTab.focus && <Focus />} */}
+              {menuTab.noise && <Noise />}
             </div>
           </>
         )}

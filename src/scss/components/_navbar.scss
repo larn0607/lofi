@@ -14,5 +14,23 @@
 
   &__logo {
     flex: 1;
+
+    // @include mobile {
+    //   flex: unset;
+    // }
+  }
+
+  @include mobile {
+
+    padding: 3rem 0;
+    // gap: 0;
+
+    & .toggle {
+      margin-right: 1rem;
+    }
+
+    &__logo {
+      flex: unset;
+    }
   }
 }

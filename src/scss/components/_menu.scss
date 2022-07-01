@@ -18,7 +18,7 @@
     right: 0; 
     transform: translateY(-50%);
     width: $width-items;
-    height: 140px;
+    height: 210px;
     margin-right: $padding-items;
     background-color: rgba(0,0,0,0.6);
     border-radius: 35px;
@@ -109,8 +109,10 @@
     }
     &.focus-menu {
       top: 50%;
-
       // margin-top:9rem;
+    }
+    &.noise-menu {
+      top: 40%;
     }
   }
 }

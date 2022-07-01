@@ -9,6 +9,7 @@ export { default as Menu } from './menu/Menu'
 export { default as Set } from './menu/Set'
 export { default as Mood } from './menu/Mood'
 export { default as Focus } from './menu/Focus'
+export { default as Noise } from './menu/Noise'
 
 export { default as BackgroundPopover } from './background-popover/BackgroundPopover'
 export { default as BookCafe } from './background-popover/BookCafe'

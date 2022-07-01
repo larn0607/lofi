@@ -32,6 +32,8 @@ import volumeMaxIcon from './volume-max.svg';
 import volumeMinIcon from './volume-min.svg';
 import xIcon from './x.svg';
 import phoneIcon from './phone.svg';
+import playMusicIcon from './play-music.svg';
+import pauseMusicIcon from './pause-music.svg';
 
 import cityIcon from './noises/city.svg';
 import cityRainIcon from './noises/city-rain.svg';
@@ -105,5 +107,7 @@ export {
 	keyboardIcon,
 	pixel,
 	pixelHover,
-	phoneIcon
+	phoneIcon,
+	playMusicIcon,
+	pauseMusicIcon
 };

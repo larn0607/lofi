@@ -12,7 +12,6 @@ import { AudioContext } from '../context/AudioProvider'
 
 const Audio = () => {
   const noisesRefs = useContext(AudioContext)
-  // console.log(noisesRefs)
   const audioRef = useRef(null)
   const currentSong = useSelector(state => state.audio.currentSong)
   const volumeValue = useSelector(state => state.audio.volumeValue)
@@ -66,7 +65,7 @@ const Audio = () => {
     <>
       <div className="audio">
         <div className="audio__wrapper">
-          <p className="audio__wrapper__text">Music by - lofi.co 2021 ©</p>
+          <p className="audio__wrapper__text">lofi.co 2022 ©</p>
           <div className="audio__wrapper__button">
             <Button
               onClick={() => {

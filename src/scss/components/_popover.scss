@@ -8,7 +8,7 @@
 
 .popover {
   position: absolute;
-  width: 200px;
+  width: 0;
   @include flex(flex-start, center);
   flex-direction: column;
   cursor: pointer;

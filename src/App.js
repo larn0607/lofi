@@ -27,7 +27,7 @@ function App() {
   return (
     <>
       <IntroScreen isIntro={isIntro} />
-      {window.innerWidth < '1024' && <Overlay />}
+      {window.innerWidth < '600' && <Overlay />}
       <Navbar />
       <BackgroundPopover />
       <Background />

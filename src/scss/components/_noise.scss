@@ -1,0 +1,52 @@
+@use '../utils/' as *;
+
+.noises {
+  height: 400px;
+  &__items {
+    height: 380px;
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__item {
+    @include flex(space-between, center);
+    margin: 2rem 0;
+
+    &__slider {
+      width: 160px;
+      height: 26px;
+      background-color: $bg-mood;
+      border-radius: 20px;
+      cursor: pointer;
+      
+      &__track {
+        height: 26px;
+        border-radius: 20px;
+        
+        &.valid {
+          background-color: $light;
+        }
+      }
+      &__thumb {
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        background-color: white;
+
+        &:focus {
+          outline: 0;
+        }
+
+        &.active {
+          opacity: 0.2;
+          filter: brightness(200);
+        }
+      }
+    }
+  }
+}
