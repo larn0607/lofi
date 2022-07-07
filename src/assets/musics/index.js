@@ -20,6 +20,19 @@ import j9 from './80s japanese night city/j9.mp3'
 import j10 from './80s japanese night city/j10.mp3'
 import j11 from './80s japanese night city/j11.mp3'
 
+import v1 from './vu/chuyen nhung nguoi iu xa.mp3'
+import v2 from './vu/con anh.mp3'
+import v3 from './vu/da tung la.mp3'
+import v4 from './vu/doi.mp3'
+import v5 from './vu/em la ai.mp3'
+import v6 from './vu/Hanh tinh song song pt2.mp3'
+import v7 from './vu/la.mp3'
+import v8 from './vu/hanh tinh song song.mp3'
+import v9 from './vu/mua he cua em.mp3'
+import v10 from './vu/mua mua ngau nam canh.mp3'
+
+
+
 export {
   lmlm,
   island,
@@ -39,5 +52,15 @@ export {
   j8,
   j9,
   j10,
-  j11
+  j11,
+  v1,
+  v2,
+  v3,
+  v4,
+  v5,
+  v6,
+  v7,
+  v8,
+  v9,
+  v10,
 }

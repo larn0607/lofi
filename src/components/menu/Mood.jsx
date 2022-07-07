@@ -7,7 +7,7 @@ import {
   jazzyIcon,
   chillIcon,
   volumeMinIcon,
-  volumeMaxIcon,
+  volumeMaxIcon
 } from '../../assets/icons'
 
 import { useSelector, useDispatch } from 'react-redux'
@@ -23,7 +23,8 @@ import {
   SLEEPY_MUSICS,
   HOLIDAY,
   POP_80S,
-  ROMANCE
+  ROMANCE,
+  VUX_MUSIC
 } from '../../constants/'
 
 const Mood = ({ initialMood, setMood, mood }) => {
@@ -109,6 +110,18 @@ const Mood = ({ initialMood, setMood, mood }) => {
             })
           )
           break
+        case 'vux':
+          setMood({ ...initialMood, vux: true })
+          randomIndex = Math.floor(Math.random() * VUX_MUSIC.length)
+          dispatch(
+            setCurrentSong({
+              ...currentSong,
+              list: VUX_MUSIC,
+              index: randomIndex,
+              src: VUX_MUSIC[randomIndex]
+            })
+          )
+          break
         default:
           break
       }
@@ -175,11 +188,11 @@ const Mood = ({ initialMood, setMood, mood }) => {
       <div className="music">
         <div className="music__title title">Other Music Tracks</div>
         <div className="music__items">
-          <MusicItem
+          {/* <MusicItem
             label="Holiday"
             isActive={mood.holiday}
             handleClick={() => handleActiveMood('holiday')}
-          />
+          /> */}
           <MusicItem
             label="Romance"
             isActive={mood.romance}
@@ -189,6 +202,11 @@ const Mood = ({ initialMood, setMood, mood }) => {
             label="80s Japanese Night City Pop"
             isActive={mood.pop80s}
             handleClick={() => handleActiveMood('pop80s')}
+          />
+          <MusicItem
+            label="Vux - My favorite playlist"
+            isActive={mood.vux}
+            handleClick={() => handleActiveMood('vux')}
           />
         </div>
       </div>
