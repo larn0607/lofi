@@ -23,7 +23,8 @@ const Menu = () => {
     chill: false,
     holiday: false,
     romance: false,
-    pop80s: false
+    pop80s: false,
+    vux: false,
   }
   const [menuTab, setMenuTab] = useState(initialTab)
 
