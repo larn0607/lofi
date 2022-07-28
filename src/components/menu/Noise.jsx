@@ -117,7 +117,7 @@ const Noise = () => {
                     }
                   }
                   if (noisesRefs.current[index] === noisesRefs.current[8]) {
-                    if (!['ocean', 'summer'].includes(background.set)) return
+                    if (!['ocean', 'summer', 'honolulu'].includes(background.set)) return
                     else {
                       if (value === 0) {
                         dispatch(

@@ -25,6 +25,9 @@ import {
   Summer,
   Ocean
 } from '../'
+import Kyoto from './Kyoto'
+import Dreamin from './Dreamin'
+import Honolulu from './Honolulu'
 
 const BackgroundPopover = () => {
   const background = useSelector(state => state.background.background)
@@ -153,6 +156,30 @@ const BackgroundPopover = () => {
       {background.set === 'summer' && (
         <>
           <Summer
+            scene={background.scene}
+            handleActiveNoise={handleActiveNoise}
+          />
+        </>
+      )}
+      {background.set === 'kyoto' && (
+        <>
+          <Kyoto
+            scene={background.scene}
+            handleActiveNoise={handleActiveNoise}
+          />
+        </>
+      )}
+      {background.set === 'dreamin' && (
+        <>
+          <Dreamin
+            scene={background.scene}
+            handleActiveNoise={handleActiveNoise}
+          />
+        </>
+      )}
+      {background.set === 'honolulu' && (
+        <>
+          <Honolulu
             scene={background.scene}
             handleActiveNoise={handleActiveNoise}
           />

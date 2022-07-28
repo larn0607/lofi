@@ -50,6 +50,20 @@ import vanOutFire from './van/van-out-fire.mp4'
 import vanOut from './van/van-out.mp4'
 import vanRain from './van/van-rain.mp4'
 import van from './van/van.mp4'
+import space from './dreamin/Space.mp4'
+import underwater from './dreamin/Underwater.mp4'
+import kyotoParkDay from './kyoto/kyoto-park-day.mp4'
+import kyotoParkNight from './kyoto/kyoto-park-night.mp4'
+import kyotoStreetDay from './kyoto/kyoto-street-day.mp4'
+import kyotoStreetNight from './kyoto/kyoto-street-night.mp4'
+import honoluluBalconyDay from './honolulu/Honolulu+Balcony+Day.mp4'
+import honoluluBalconyNight from './honolulu/Honolulu+Balcony+Night.mp4'
+import honoluluBalconyRainDay from './honolulu/Honolulu+Balcony+Rainy+Day.mp4'
+import honoluluBalconyRainNight from './honolulu/Honolulu+Balcony+Rainy+Night.mp4'
+import honoluluBeachDay from './honolulu/Honolulu+Beach+Day.mp4'
+import honoluluBeachNight from './honolulu/Honolulu+Beach+Night.mp4'
+import honoluluBeachRainDay from './honolulu/Honolulu+Beach+Rainy+Day.mp4'
+import honoluluBeachRainNight from './honolulu/Honolulu+Beach+Rainy+Night.mp4'
 
 export {
 bookCafeDayInRain,
@@ -104,4 +118,19 @@ vanOutFire,
 vanOut,
 vanRain,
 van,
+space,
+underwater,
+kyotoParkDay,
+kyotoParkNight,
+kyotoStreetDay,
+kyotoStreetNight,
+honoluluBalconyDay,
+honoluluBalconyNight,
+honoluluBalconyRainDay,
+honoluluBalconyRainNight,
+honoluluBeachDay,
+honoluluBeachNight,
+honoluluBeachRainDay,
+honoluluBeachRainNight,
+
 }

@@ -14,6 +14,8 @@ import wind from '../assets/noises/wind.mp3'
 import ocean from '../assets/noises/ocean.mp3'
 import snow from '../assets/noises/snow.mp3'
 import keyboard from '../assets/noises/keyboard.mp3'
+import underwater from '../assets/noises/underwater.mp3'
+import space from '../assets/noises/space.mp3'
 
 const NOISES = [
 	cityTraffic,
@@ -31,7 +33,9 @@ const NOISES = [
 	wind,
 	ocean,
 	snow,
-	keyboard
+	keyboard,
+	underwater,
+	space,
 ]
 
 export default NOISES

@@ -26,6 +26,15 @@ import summer2 from './summer/summer-out.png'
 import vanThumb from './van/van-set.png'
 import van1 from './van/van.png'
 import van2 from './van/van-out.png'
+import dreaminThumb from './dreamin/dreamin-thumb.png'
+import space from './dreamin/space.png'
+import underwater from './dreamin/underwater.png'
+import honoluluThumb from './honolulu/honolulu-thumb.png'
+import honoluluIn from './honolulu/honolulu_in.png'
+import honoluluOut from './honolulu/honolulu_out.png'
+import kyotoThumb from './kyoto/kyoto.png'
+import kyotoPark from './kyoto/kyotoPark.png'
+import kyotoStreet from './kyoto/kyotoStreet.png'
 import logoGif from './logo.gif'
 
 export {
@@ -58,4 +67,13 @@ vanThumb,
 van1,
 van2,
 logoGif,
+dreaminThumb,
+space,
+underwater,
+honoluluThumb,
+honoluluIn,
+honoluluOut,
+kyotoThumb,
+kyotoPark,
+kyotoStreet,
 }

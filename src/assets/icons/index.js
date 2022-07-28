@@ -51,6 +51,8 @@ import windIcon from './noises/wind.svg';
 import oceanIcon from './noises/ocean.svg';
 import snowIcon from './noises/snow.svg';
 import keyboardIcon from './noises/keyboard.svg';
+import underwaterIcon from './noises/underwater.svg';
+import spaceIcon from './noises/space.svg';
 
 import pixel from './pixel.png'
 import pixelHover from './pixel-hover.png'
@@ -109,5 +111,7 @@ export {
 	pixelHover,
 	phoneIcon,
 	playMusicIcon,
-	pauseMusicIcon
+	pauseMusicIcon,
+	underwaterIcon,
+	spaceIcon,
 };

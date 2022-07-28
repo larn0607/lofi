@@ -3,7 +3,7 @@ import { SETS_BACKGROUND } from '../../constants/'
 
 const initialState = {
   background: {
-    set: 'book_cafe',
+    set: 'honolulu',
     scene: 'scene1',
     show: true,
     day: true,
@@ -13,7 +13,7 @@ const initialState = {
     pixel: false,
     srcIn: SETS_BACKGROUND.find(
 			item =>
-				item.set === 'book_cafe' && item.scene === 'scene1' && item.day === true && item.rainy === false
+				item.set === 'honolulu' && item.scene === 'scene1' && item.day === true && item.rainy === false
 		).src,
     srcOut: null
   },

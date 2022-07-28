@@ -27,6 +27,15 @@ summer2,
 vanThumb,
 van1,
 van2,
+dreaminThumb,
+space,
+underwater,
+honoluluThumb,
+honoluluIn,
+honoluluOut,
+kyotoThumb,
+kyotoPark,
+kyotoStreet,
 } from '../assets/images'
 
 const SETS = [
@@ -157,6 +166,48 @@ const SETS = [
       {
         scene: 'scene2',
 				img: bookCafe2,
+      }
+    ]
+  },
+  {
+    set: 'kyoto',
+    img: kyotoThumb,
+    scenes: [
+      {
+        scene: 'scene1',
+				img: kyotoStreet,
+      },
+      {
+        scene: 'scene2',
+				img: kyotoPark,
+      }
+    ]
+  },
+  {
+    set: 'dreamin',
+    img: dreaminThumb,
+    scenes: [
+      {
+        scene: 'scene1',
+				img: space,
+      },
+      {
+        scene: 'scene2',
+				img: underwater,
+      }
+    ]
+  },
+  {
+    set: 'honolulu',
+    img: honoluluThumb,
+    scenes: [
+      {
+        scene: 'scene1',
+				img: honoluluIn,
+      },
+      {
+        scene: 'scene2',
+				img: honoluluOut,
       }
     ]
   },
