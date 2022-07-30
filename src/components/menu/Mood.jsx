@@ -254,11 +254,11 @@ const Mood = ({ initialMood, setMood, mood }) => {
       <div className="music">
         <div className="music__title title">Music for today</div>
         <div className="music__items">
-          {/* <MusicItem
+          <MusicItem
             label="Holiday"
             isActive={mood.holiday}
             handleClick={() => handleActiveMood('holiday')}
-          /> */}
+          />
           <MusicItem
             label="Romance"
             isActive={mood.romance}
