@@ -24,7 +24,12 @@ import {
   HOLIDAY,
   POP_80S,
   ROMANCE,
-  VUX_MUSIC
+  VUX_MUSIC,
+  THROUGH_LOVE,
+  HO20,
+  HO22,
+  HO23,
+  HO24
 } from '../../constants/'
 
 const Mood = ({ initialMood, setMood, mood }) => {
@@ -122,6 +127,67 @@ const Mood = ({ initialMood, setMood, mood }) => {
             })
           )
           break
+        case 'throughLove':
+          setMood({ ...initialMood, throughLove: true })
+          randomIndex = Math.floor(Math.random() * THROUGH_LOVE.length)
+          dispatch(
+            setCurrentSong({
+              ...currentSong,
+              list: THROUGH_LOVE,
+              index: randomIndex,
+              src: THROUGH_LOVE[randomIndex]
+            })
+          )
+          break
+        case 'ho20':
+          setMood({ ...initialMood, ho20: true })
+          randomIndex = Math.floor(Math.random() * HO20.length)
+          dispatch(
+            setCurrentSong({
+              ...currentSong,
+              list: HO20,
+              index: randomIndex,
+              src: HO20[randomIndex]
+            })
+          )
+          break
+        case 'ho22':
+          setMood({ ...initialMood, ho22: true })
+          randomIndex = Math.floor(Math.random() * HO22.length)
+          dispatch(
+            setCurrentSong({
+              ...currentSong,
+              list: HO22,
+              index: randomIndex,
+              src: HO22[randomIndex]
+            })
+          )
+          break
+        case 'ho23':
+          setMood({ ...initialMood, ho23: true })
+          randomIndex = Math.floor(Math.random() * HO23.length)
+          dispatch(
+            setCurrentSong({
+              ...currentSong,
+              list: HO23,
+              index: randomIndex,
+              src: HO23[randomIndex]
+            })
+          )
+          break
+        case 'ho24':
+          setMood({ ...initialMood, ho24: true })
+          randomIndex = Math.floor(Math.random() * HO24.length)
+          dispatch(
+            setCurrentSong({
+              ...currentSong,
+              list: HO24,
+              index: randomIndex,
+              src: HO24[randomIndex]
+            })
+          )
+          break
+
         default:
           break
       }
@@ -186,7 +252,7 @@ const Mood = ({ initialMood, setMood, mood }) => {
         </div>
       </div>
       <div className="music">
-        <div className="music__title title">Other Music Tracks</div>
+        <div className="music__title title">Music for today</div>
         <div className="music__items">
           {/* <MusicItem
             label="Holiday"
@@ -207,6 +273,31 @@ const Mood = ({ initialMood, setMood, mood }) => {
             label="Vux - My favorite playlist"
             isActive={mood.vux}
             handleClick={() => handleActiveMood('vux')}
+          />
+          <MusicItem
+            label="HUYKOH - Through love"
+            isActive={mood.throughLove}
+            handleClick={() => handleActiveMood('throughLove')}
+          />
+          <MusicItem
+            label="HUYKOH - 20"
+            isActive={mood.ho20}
+            handleClick={() => handleActiveMood('ho20')}
+          />
+          <MusicItem
+            label="HUYKOH - 22"
+            isActive={mood.ho22}
+            handleClick={() => handleActiveMood('ho22')}
+          />
+          <MusicItem
+            label="HUYKOH - 23"
+            isActive={mood.ho23}
+            handleClick={() => handleActiveMood('ho23')}
+          />
+          <MusicItem
+            label="HUYKOH - 24"
+            isActive={mood.ho24}
+            handleClick={() => handleActiveMood('ho24')}
           />
         </div>
       </div>

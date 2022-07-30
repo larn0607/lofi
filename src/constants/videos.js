@@ -729,4 +729,4 @@ const SETS_BACKGROUND = [{
 	},
 ]
 
-export default SETS_BACKGROUND
+export default SETS_BACKGROUND.reverse()

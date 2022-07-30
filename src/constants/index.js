@@ -6,6 +6,12 @@ export { default as ROMANCE } from './musics/romance'
 export { default as POP_80S } from './musics/pop80s'
 export { default as VUX_MUSIC } from './musics/vux'
 
+export { default as THROUGH_LOVE } from './musics/huykoh/throughLove'
+export { default as HO20 } from './musics/huykoh/20'
+export { default as HO22 } from './musics/huykoh/22'
+export { default as HO23 } from './musics/huykoh/23'
+export { default as HO24 } from './musics/huykoh/24'
+
 export { default as SETS } from './sets'
 export { default as SETS_BACKGROUND } from './videos'
 export { default as NOISES } from './noises'

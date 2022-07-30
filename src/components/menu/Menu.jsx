@@ -21,10 +21,6 @@ const Menu = () => {
     sleepy: false,
     jazzy: false,
     chill: false,
-    holiday: false,
-    romance: false,
-    pop80s: false,
-    vux: false,
   }
   const [menuTab, setMenuTab] = useState(initialTab)
 
