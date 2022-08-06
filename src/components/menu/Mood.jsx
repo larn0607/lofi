@@ -38,11 +38,11 @@ const Mood = ({ initialMood, setMood, mood }) => {
   const dispatch = useDispatch()
 
   const musicItems = [
-    {
-      label: 'Holiday',
-      isActive: mood.holiday,
-      type: 'holiday'
-    },
+    // {
+    //   label: 'Holiday',
+    //   isActive: mood.holiday,
+    //   type: 'holiday'
+    // },
     {
       label: 'Romance',
       isActive: mood.romance,
