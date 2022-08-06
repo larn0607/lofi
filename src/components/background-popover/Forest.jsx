@@ -7,17 +7,17 @@ const styles = {
       noiseValue: 'rainForestValue',
       label: 'Forest Rain',
       styles: {
-        left: '20%',
-        top: '45%'
+        left: '70%',
+        top: '30%'
       }
     },
-    forestSound: {
-      noiseName: 'forestSound',
-      noiseValue: 'forestSoundValue',
-      label: 'Forest Sound',
+    birds: {
+      noiseName: 'birds',
+      noiseValue: 'birdsValue',
+      label: 'Birds',
       styles: {
-        left: '82%',
-        top: '15%'
+        left: '15%',
+        top: '20%'
       }
     },
     river: {
@@ -31,22 +31,22 @@ const styles = {
     }
   },
   scene2: {
+    birds: {
+      noiseName: 'birds',
+      noiseValue: 'birdsValue',
+      label: 'Birds',
+      styles: {
+        left: '10%',
+        top: '50%'
+      }
+    },
     rainForest: {
       noiseName: 'rainForest',
       noiseValue: 'rainForestValue',
       label: 'Forest Rain',
       styles: {
-        left: '40%',
-        top: '25%'
-      }
-    },
-    forestSound: {
-      noiseName: 'forestSound',
-      noiseValue: 'forestSoundValue',
-      label: 'Forest Sound',
-      styles: {
-        left: '82%',
-        top: '20%'
+        left: '67%',
+        top: '12%'
       }
     },
     river: {
@@ -54,8 +54,8 @@ const styles = {
       noiseValue: 'riverValue',
       label: 'River',
       styles: {
-        left: '68%',
-        top: '85%'
+        left: '70%',
+        top: '70%'
       }
     }
   }
@@ -76,12 +76,12 @@ const Forest = ({ scene, handleActiveNoise }) => (
           }
         />
         <Popover
-          style={styles.scene1.forestSound.styles}
-          label={styles.scene1.forestSound.label}
+          style={styles.scene1.birds.styles}
+          label={styles.scene1.birds.label}
           onClick={() =>
             handleActiveNoise(
-              styles.scene1.forestSound.noiseValue,
-              styles.scene1.forestSound.noiseName
+              styles.scene1.birds.noiseValue,
+              styles.scene1.birds.noiseName
             )
           }
         />
@@ -110,12 +110,12 @@ const Forest = ({ scene, handleActiveNoise }) => (
           }
         />
         <Popover
-          style={styles.scene2.forestSound.styles}
-          label={styles.scene2.forestSound.label}
+          style={styles.scene2.birds.styles}
+          label={styles.scene2.birds.label}
           onClick={() =>
             handleActiveNoise(
-              styles.scene2.forestSound.noiseValue,
-              styles.scene2.forestSound.noiseName
+              styles.scene2.birds.noiseValue,
+              styles.scene2.birds.noiseName
             )
           }
         />

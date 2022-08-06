@@ -8,16 +8,14 @@ const styles = {
       label: 'Ocean',
       styles: {
         left: '40%',
-        top: '25%'
+        top: '15%'
       }
     },
-    wind: {
-      noiseName: 'wind',
-      noiseValue: 'windValue',
-      label: 'Wind',
+    nextScene: {
+      label: 'Change scene',
       styles: {
-        left: '12%',
-        top: '45%'
+        left: '44%',
+        top: '52.5%'
       }
     }
   },
@@ -27,17 +25,15 @@ const styles = {
       noiseValue: 'cityTrafficValue',
       label: 'City Traffic',
       styles: {
-        left: '22%',
-        top: '25%'
+        left: '40%',
+        top: '15%'
       }
     },
-    wind: {
-      noiseName: 'wind',
-      noiseValue: 'windValue',
-      label: 'Wind',
+    nextScene: {
+      label: 'Change scene',
       styles: {
-        left: '12%',
-        top: '45%'
+        left: '44%',
+        top: '52.5%'
       }
     }
   },
@@ -47,14 +43,21 @@ const styles = {
       noiseValue: 'snowValue',
       label: 'Blizzard',
       styles: {
-        left: '42%',
-        top: '25%'
+        left: '40%',
+        top: '15%'
+      }
+    },
+    nextScene: {
+      label: 'Change scene',
+      styles: {
+        left: '44%',
+        top: '52.5%'
       }
     }
   }
 }
 
-const LofiDesk = ({ scene, handleActiveNoise }) => (
+const LofiDesk = ({ scene, handleActiveNoise, handleChangeScence }) => (
   <>
     {scene === 'scene1' && (
       <>
@@ -69,14 +72,9 @@ const LofiDesk = ({ scene, handleActiveNoise }) => (
           }
         />
         <Popover
-          style={styles.scene1.wind.styles}
-          label={styles.scene1.wind.label}
-          onClick={() =>
-            handleActiveNoise(
-              styles.scene1.wind.noiseValue,
-              styles.scene1.wind.noiseName
-            )
-          }
+          style={styles.scene1.nextScene.styles}
+          label={styles.scene1.nextScene.label}
+          onClick={handleChangeScence}
         />
       </>
     )}
@@ -93,14 +91,9 @@ const LofiDesk = ({ scene, handleActiveNoise }) => (
           }
         />
         <Popover
-          style={styles.scene2.wind.styles}
-          label={styles.scene2.wind.label}
-          onClick={() =>
-            handleActiveNoise(
-              styles.scene2.wind.noiseValue,
-              styles.scene2.wind.noiseName
-            )
-          }
+          style={styles.scene2.nextScene.styles}
+          label={styles.scene2.nextScene.label}
+          onClick={handleChangeScence}
         />
       </>
     )}
@@ -115,6 +108,11 @@ const LofiDesk = ({ scene, handleActiveNoise }) => (
               styles.scene3.snow.noiseName
             )
           }
+        />
+        <Popover
+          style={styles.scene3.nextScene.styles}
+          label={styles.scene3.nextScene.label}
+          onClick={handleChangeScence}
         />
       </>
     )}

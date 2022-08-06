@@ -8,7 +8,7 @@ const styles = {
       label: 'City Rain',
       styles: {
         left: '82%',
-        top: '25%'
+        top: '20%'
       }
     },
     cityTraffic: {
@@ -16,8 +16,8 @@ const styles = {
       noiseValue: 'cityTrafficValue',
       label: 'City Traffic',
       styles: {
-        left: '8%',
-        top: '25%'
+        left: '7%',
+        top: '18%'
       }
     },
     keyboard: {
@@ -36,8 +36,8 @@ const styles = {
       noiseValue: 'rainCityValue',
       label: 'City Rain',
       styles: {
-        left: '17%',
-        top: '20%'
+        left: '40%',
+        top: '14%'
       }
     },
     fireplace: {
@@ -45,8 +45,8 @@ const styles = {
       noiseValue: 'fireplaceValue',
       label: 'Fireplace',
       styles: {
-        left: '84%',
-        top: '72%'
+        left: '4%',
+        top: '68%'
       }
     }
   }

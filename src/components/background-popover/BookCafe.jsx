@@ -79,7 +79,7 @@ const BookCafe = ({ scene, handleActiveNoise, handleChangeScence }) => (
         />
         <Popover
           style={styles.scene1.enter.styles}
-          label="Enter"
+          label={styles.scene1.enter.label}
           onClick={handleChangeScence}
         />
       </>

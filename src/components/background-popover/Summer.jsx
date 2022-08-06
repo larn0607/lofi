@@ -2,15 +2,6 @@ import Popover from './Popover'
 
 const styles = {
   scene1: {
-    waves: {
-      noiseName: 'waves',
-      noiseValue: 'wavesValue',
-      label: 'Waves',
-      styles: {
-        left: '85%',
-        top: '45%'
-      }
-    },
     fan: {
       noiseName: 'fan',
       noiseValue: 'fanValue',
@@ -25,8 +16,8 @@ const styles = {
       noiseValue: 'summerStormValue',
       label: 'Summer Storm',
       styles: {
-        left: '27%',
-        top: '33%'
+        left: '30%',
+        top: '25%'
       }
     }
   },
@@ -36,8 +27,8 @@ const styles = {
       noiseValue: 'summerStormValue',
       label: 'Summer Storm',
       styles: {
-        left: '40%',
-        top: '25%'
+        left: '85%',
+        top: '15%'
       }
     },
     waves: {
@@ -45,8 +36,8 @@ const styles = {
       noiseValue: 'wavesValue',
       label: 'Waves',
       styles: {
-        left: '60%',
-        top: '86%'
+        left: '75%',
+        top: '80%'
       }
     }
   }
@@ -57,16 +48,6 @@ const Summer = ({ scene, handleActiveNoise }) => {
     <>
       {scene === 'scene1' && (
         <>
-          <Popover
-            style={styles.scene1.waves.styles}
-            label={styles.scene1.waves.label}
-            onClick={() =>
-              handleActiveNoise(
-                styles.scene1.waves.noiseValue,
-                styles.scene1.waves.noiseName
-              )
-            }
-          />
           <Popover
             style={styles.scene1.fan.styles}
             label={styles.scene1.fan.label}

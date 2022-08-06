@@ -10,6 +10,15 @@ const styles = {
         left: '20%',
         top: '45%'
       }
+    },
+    forestSound: {
+      noiseName: 'forestSound',
+      noiseValue: 'forestSoundValue',
+      label: 'Forest Sound',
+      styles: {
+        left: '55%',
+        top: '20%'
+      }
     }
   },
   scene2: {
@@ -19,7 +28,7 @@ const styles = {
       label: 'Campfire',
       styles: {
         left: '42%',
-        top: '82%'
+        top: '78%'
       }
     },
     forestSound: {
@@ -27,7 +36,7 @@ const styles = {
       noiseValue: 'forestSoundValue',
       label: 'Forest Sound',
       styles: {
-        left: '82%',
+        left: '10%',
         top: '20%'
       }
     }
@@ -37,16 +46,28 @@ const styles = {
 const Van = ({ scene, handleActiveNoise }) => (
   <>
     {scene === 'scene1' && (
-      <Popover
-        style={styles.scene1.rainForest.styles}
-        label={styles.scene1.rainForest.label}
-        onClick={() =>
-          handleActiveNoise(
-            styles.scene1.rainForest.noiseValue,
-            styles.scene1.rainForest.noiseName
-          )
-        }
-      />
+      <>
+        <Popover
+          style={styles.scene1.rainForest.styles}
+          label={styles.scene1.rainForest.label}
+          onClick={() =>
+            handleActiveNoise(
+              styles.scene1.rainForest.noiseValue,
+              styles.scene1.rainForest.noiseName
+            )
+          }
+        />
+        <Popover
+          style={styles.scene1.forestSound.styles}
+          label={styles.scene1.forestSound.label}
+          onClick={() =>
+            handleActiveNoise(
+              styles.scene1.forestSound.noiseValue,
+              styles.scene1.forestSound.noiseName
+            )
+          }
+        />
+      </>
     )}
     {scene === 'scene2' && (
       <>

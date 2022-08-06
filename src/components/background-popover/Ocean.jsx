@@ -2,22 +2,13 @@ import Popover from './Popover'
 
 const styles = {
   scene1: {
-    ocean: {
-      noiseName: 'ocean',
-      noiseValue: 'oceanValue',
-      label: 'Ocean',
-      styles: {
-        left: '45%',
-        top: '65%'
-      }
-    },
     wind: {
       noiseName: 'wind',
       noiseValue: 'windValue',
       label: 'Wind',
       styles: {
-        left: '20%',
-        top: '50%'
+        left: '8%',
+        top: '59%'
       }
     },
     summerStorm: {
@@ -25,8 +16,8 @@ const styles = {
       noiseValue: 'summerStormValue',
       label: 'Ocean Rain',
       styles: {
-        left: '67%',
-        top: '23%'
+        left: '59%',
+        top: '31%'
       }
     }
   },
@@ -36,8 +27,8 @@ const styles = {
       noiseValue: 'summerStormValue',
       label: 'Ocean Rain',
       styles: {
-        left: '40%',
-        top: '25%'
+        left: '48%',
+        top: '13%'
       }
     },
     ocean: {
@@ -45,19 +36,19 @@ const styles = {
       noiseValue: 'oceanValue',
       label: 'Ocean',
       styles: {
-        left: '60%',
-        top: '86%'
+        left: '42%',
+        top: '64%'
       }
     },
-    birds: {
-      noiseName: 'birds',
-      noiseValue: 'birdsValue',
-      label: 'Birds',
+    wind: {
+      noiseName: 'wind',
+      noiseValue: 'windValue',
+      label: 'Wind',
       styles: {
-        left: '80%',
-        top: '20%'
+        left: '8%',
+        top: '15%'
       }
-    }
+    },
   }
 }
 
@@ -65,16 +56,6 @@ const Ocean = ({ scene, handleActiveNoise }) => (
   <>
     {scene === 'scene1' && (
       <>
-        <Popover
-          style={styles.scene1.ocean.styles}
-          label={styles.scene1.ocean.label}
-          onClick={() =>
-            handleActiveNoise(
-              styles.scene1.ocean.noiseValue,
-              styles.scene1.ocean.noiseName
-            )
-          }
-        />
         <Popover
           style={styles.scene1.wind.styles}
           label={styles.scene1.wind.label}
@@ -110,12 +91,12 @@ const Ocean = ({ scene, handleActiveNoise }) => (
           }
         />
         <Popover
-          style={styles.scene2.birds.styles}
-          label={styles.scene2.birds.label}
+          style={styles.scene2.wind.styles}
+          label={styles.scene2.wind.label}
           onClick={() =>
             handleActiveNoise(
-              styles.scene2.birds.noiseValue,
-              styles.scene2.birds.noiseName
+              styles.scene2.wind.noiseValue,
+              styles.scene2.wind.noiseName
             )
           }
         />

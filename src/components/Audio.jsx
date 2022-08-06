@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useContext } from 'react'
+import React, { useEffect, useRef, useContext, useCallback } from 'react'
 
 import { nextIcon, pauseIcon, playIcon, prevIcon } from '../assets/icons'
 import { Button } from './'
@@ -30,17 +30,17 @@ const Audio = () => {
     })
   }, [noisesRefs, noisesValue])
 
-  const handlePlay = () => {
+  const handlePlay = useCallback(() => {
     dispatch(setIsPlaying(true))
     if (audioRef.current.paused) audioRef.current.play()
-  }
+  }, [dispatch])
 
-  const handlePause = () => {
+  const handlePause = useCallback(() => {
     dispatch(setIsPlaying(false))
     if (!audioRef.current.paused) audioRef.current.pause()
-  }
+  }, [dispatch])
 
-  const nextSong = (list, currentIndex) => {
+  const nextSong = useCallback((list, currentIndex) => {
     let newIndex
     if (currentIndex < 0 || currentIndex >= list.length - 1) {
       newIndex = 0
@@ -49,9 +49,9 @@ const Audio = () => {
     }
 
     return { index: newIndex, src: list[newIndex] }
-  }
+  }, [])
 
-  const prevSong = (list, currentIndex) => {
+  const prevSong = useCallback((list, currentIndex) => {
     let newIndex
     if (currentIndex <= 0 || currentIndex > list.length - 1) {
       newIndex = list.length - 1
@@ -59,7 +59,54 @@ const Audio = () => {
       newIndex = currentIndex - 1
     }
     return { index: newIndex, src: list[newIndex] }
-  }
+  }, [])
+
+  useEffect(() => {
+    const handlePlayMusic = (e) => {
+      if(e.keyCode === 32 && e.ctrlKey) {
+        !isPlaying ? handlePlay() : handlePause()
+      }
+    }
+    window.addEventListener('keydown', handlePlayMusic)
+
+    return () => {
+      window.removeEventListener('keydown', handlePlayMusic)
+    }
+  }, [handlePlay, handlePause, isPlaying])
+
+    useEffect(() => {
+    const nextKeyCode = e => {
+      if(e.keyCode === 78 && e.shiftKey) {
+        dispatch(setCurrentSong({
+          ...currentSong,
+          index: nextSong(currentSong.list, currentSong.index).index,
+          src: nextSong(currentSong.list, currentSong.index).src
+        }))
+      }
+    }
+    window.addEventListener('keydown', nextKeyCode)
+
+    return () => {
+      window.removeEventListener('keydown', nextKeyCode)
+    }
+  }, [dispatch, currentSong, nextSong, isPlaying])
+
+  useEffect(() => {
+    const prevSongKeyCode = e => {
+      if(e.keyCode === 80 && e.shiftKey) {
+        dispatch(setCurrentSong({
+          ...currentSong,
+          index: prevSong(currentSong.list, currentSong.index).index,
+          src: prevSong(currentSong.list, currentSong.index).src
+        }))
+      }
+    }
+    window.addEventListener('keydown', prevSongKeyCode)
+
+    return () => {
+      window.removeEventListener('keydown', prevSongKeyCode)
+    }
+  }, [dispatch, currentSong, prevSong, isPlaying])
 
   return (
     <>
@@ -105,13 +152,13 @@ const Audio = () => {
           src={currentSong.src}
           preload='auto'
           autoPlay={isPlaying && true}
-          onEnded={() => {
-            dispatch(setCurrentSong({
-              ...currentSong,
-              index: prevSong(currentSong.list, currentSong.index).index,
-              src: prevSong(currentSong.list, currentSong.index).src
-            }))
-          }}
+          // onEnded={() => {
+          //   dispatch(setCurrentSong({
+          //     ...currentSong,
+          //     index: prevSong(currentSong.list, currentSong.index).index,
+          //     src: prevSong(currentSong.list, currentSong.index).src
+          //   }))
+          // }}
         />
       </div>
       <div className="audio">

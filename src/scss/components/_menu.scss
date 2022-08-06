@@ -2,9 +2,10 @@
 
 .menu {
   position: fixed;
-  top: 0;
-  bottom: 0;
+  top: 50%;
+  transform: translateY(-50%);
   right: 0;
+  height: 210px;
   width: calc($width-items + $padding-items);
   z-index: 100;
 
@@ -14,11 +15,9 @@
 
   &__items {
     position: absolute;
-    top: 50%;
+    top:  0;
     right: 0; 
-    transform: translateY(-50%);
     width: $width-items;
-    height: 210px;
     margin-right: $padding-items;
     background-color: rgba(0,0,0,0.6);
     border-radius: 35px;
@@ -99,20 +98,20 @@
     padding: 1rem;
 
     &.mood-menu {
-      top: 25%;
+      top: -40%;
     }
     &.template-menu {
       top: 30%;
     }
     &.set-menu {
-      top: 20%;
+      top: -40%;
     }
     &.focus-menu {
       top: 50%;
       // margin-top:9rem;
     }
     &.noise-menu {
-      top: 40%;
+      top: -20%;
     }
   }
 }

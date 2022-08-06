@@ -20,6 +20,15 @@ const styles = {
         left: '12%',
         top: '75%'
       }
+    },
+    keyboard: {
+      noiseName: 'keyboard',
+      noiseValue: 'keyboardValue',
+      label: 'Keyboard',
+      styles: {
+        left: '50%',
+        top: '50%'
+      }
     }
   },
   scene2: {
@@ -56,6 +65,16 @@ const NorthernLight = ({scene, handleActiveNoise}) => (
             handleActiveNoise(
               styles.scene1.fireplace.noiseValue,
               styles.scene1.fireplace.noiseName
+            )
+          }
+        />
+        <Popover
+          style={styles.scene1.keyboard.styles}
+          label={styles.scene1.keyboard.label}
+          onClick={() =>
+            handleActiveNoise(
+              styles.scene1.keyboard.noiseValue,
+              styles.scene1.keyboard.noiseName
             )
           }
         />

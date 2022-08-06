@@ -83,7 +83,14 @@ const BackgroundPopover = () => {
   const handleChangeScence = () => {
     dispatch(
       changeBackground({
-        scene: background.scene === 'scene1' ? 'scene2' : 'scene1'
+        scene:
+          background.scene === 'scene1'
+            ? 'scene2'
+            : background.scene === 'scene2'
+            ? Object.values(background.scene).includes('scene3') !== -1
+              ? 'scene3'
+              : 'scene1'
+            : 'scene1'
       })
     )
   }
@@ -120,6 +127,7 @@ const BackgroundPopover = () => {
           <LofiDesk
             scene={background.scene}
             handleActiveNoise={handleActiveNoise}
+            handleChangeScence={handleChangeScence}
           />
         </>
       )}

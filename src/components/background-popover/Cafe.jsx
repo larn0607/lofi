@@ -7,8 +7,8 @@ const styles = {
       noiseValue: 'rainCityValue',
       label: 'City Rain',
       styles: {
-        left: '6%',
-        top: '40%'
+        left: '3%',
+        top: '35%'
       }
     },
     cityTraffic: {
@@ -16,8 +16,8 @@ const styles = {
       noiseValue: 'cityTrafficValue',
       label: 'City Traffic',
       styles: {
-        left: '30%',
-        top: '65%'
+        left: '75%',
+        top: '80%'
       }
     },
     enter: {
@@ -34,8 +34,8 @@ const styles = {
       noiseValue: 'rainCityValue',
       label: 'City Rain',
       styles: {
-        left: '17%',
-        top: '20%'
+        left: '20%',
+        top: '38%'
       }
     },
     peopleTalkInside: {
@@ -43,8 +43,8 @@ const styles = {
       noiseValue: 'peopleTalkInsideValue',
       label: 'People Talk',
       styles: {
-        left: '84%',
-        top: '72%'
+        left: '50%',
+        top: '70%'
       }
     }
   }
@@ -80,7 +80,7 @@ const Cafe = ({ scene, handleActiveNoise, handleChangeScence }) => (
         />
         <Popover
           style={styles.scene1.enter.styles}
-          label="Enter"
+          label={styles.scene1.enter.label}
           onClick={handleChangeScence}
         />
       </>
