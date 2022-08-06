@@ -152,13 +152,13 @@ const Audio = () => {
           src={currentSong.src}
           preload='auto'
           autoPlay={isPlaying && true}
-          // onEnded={() => {
-          //   dispatch(setCurrentSong({
-          //     ...currentSong,
-          //     index: prevSong(currentSong.list, currentSong.index).index,
-          //     src: prevSong(currentSong.list, currentSong.index).src
-          //   }))
-          // }}
+          onEnded={() => {
+            dispatch(setCurrentSong({
+              ...currentSong,
+              index: prevSong(currentSong.list, currentSong.index).index,
+              src: prevSong(currentSong.list, currentSong.index).src
+            }))
+          }}
         />
       </div>
       <div className="audio">
