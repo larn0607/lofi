@@ -63,7 +63,7 @@ const Audio = () => {
 
   useEffect(() => {
     const handlePlayMusic = (e) => {
-      if(e.keyCode === 32 && e.ctrlKey) {
+      if(e.keyCode === 32 && e.shiftKey) {
         !isPlaying ? handlePlay() : handlePause()
       }
     }
