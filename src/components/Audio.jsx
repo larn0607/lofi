@@ -155,13 +155,8 @@ const Audio = () => {
           onEnded={() => {
             dispatch(setCurrentSong({
               ...currentSong,
-<<<<<<< HEAD
-              index: prevSong(currentSong.list, currentSong.index).index,
-              src: prevSong(currentSong.list, currentSong.index).src
-=======
               index: nextSong(currentSong.list, currentSong.index).index,
               src: nextSong(currentSong.list, currentSong.index).src
->>>>>>> 25625e7ad84ffd352d6f5eb84a9e9bda1c4bfe4c
             }))
           }}
         />
