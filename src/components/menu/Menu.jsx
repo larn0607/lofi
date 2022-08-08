@@ -36,7 +36,7 @@ const Menu = () => {
           menuTab.mood || menuTab.set || menuTab.noise ? ' active' : ''
         }`}
       >
-        <div className="menu__items">
+        <div className={`menu__items${menuTab.mood ? ' top' : ''}${menuTab.set ? ' bottom' : ''}`}>
           <MenuItem
             className="top"
             iconSrc={moodIcon}
@@ -58,7 +58,6 @@ const Menu = () => {
             }
           />
           <MenuItem
-            className="bottom"
             iconSrc={setIcon}
             isActive={menuTab.set}
             handleActive={() =>
@@ -115,7 +114,6 @@ const MenuItem = ({ className, iconSrc, handleActive, isActive }) => {
         <div className={`menu__item__icon`}>
           <img src={iconSrc} alt="icon" />
         </div>
-        {className !== 'bottom' && !isActive && <div className="divisor"></div>}
       </div>
     </>
   )
