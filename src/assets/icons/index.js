@@ -34,6 +34,8 @@ import xIcon from './x.svg';
 import phoneIcon from './phone.svg';
 import playMusicIcon from './play-music.svg';
 import pauseMusicIcon from './pause-music.svg';
+import volumeActiveIcon from "./volume-active.svg";
+import volumeMutedIcon from "./volume-muted.svg";
 
 import cityIcon from './noises/city.svg';
 import cityRainIcon from './noises/city-rain.svg';
@@ -114,4 +116,6 @@ export {
 	pauseMusicIcon,
 	underwaterIcon,
 	spaceIcon,
+	volumeActiveIcon,
+	volumeMutedIcon
 };

@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import { logoGif } from '../../assets/images'
-import { fullscreenIcon } from '../../assets/icons'
+import { fullscreenIcon, volumeActiveIcon, volumeMutedIcon } from '../../assets/icons'
 import { Button } from '../'
 
 import Switch from './Switch'
@@ -16,6 +16,7 @@ const Navbar = () => {
 
   const [isToggle, setIsToggle] = useState(false)
   const [pixel, setPixel] = useState(false)
+  const [isVolumeActive, setIsVolumeActive] = useState(true)
 
   useEffect(() => {
     background.day ? setIsToggle(false) : setIsToggle(true)
@@ -31,7 +32,7 @@ const Navbar = () => {
     }
   }
 
-  const handleChangeDayNight = () => {
+  const handleChangeDayNight = useCallback(() => {
     setIsToggle(!isToggle)
     dispatch(
       changeBackground({
@@ -40,22 +41,31 @@ const Navbar = () => {
         day: isToggle === 'false' ? background.day : !background.day
       })
     )
-  }
+  }, [dispatch, isToggle, background])
 
-  const handleChangePixel = () => {
+  const handleChangePixel = useCallback(() => {
     dispatch(changePixelBackground({
       set: background.set,
       scene: background.scene,
       pixel: !pixel
     }))
     setPixel(!pixel)
-  }
+  },[dispatch, background, pixel])
+
+  const handleActiveVolume = useCallback(() => {
+    const audio = document.querySelectorAll('audio')
+    setIsVolumeActive(!isVolumeActive)
+    audio.forEach(el => el.muted = isVolumeActive)
+  }, [isVolumeActive])
 
   return (
     <nav className="navbar">
       <div className="navbar__logo">
         <img src={logoGif} width={170} alt="logo" />
       </div>
+      <Button className="navbar__btn volume" onClick={handleActiveVolume}>
+        <img src={isVolumeActive ? volumeActiveIcon : volumeMutedIcon} alt="volume-active" />
+      </Button>
       <Button className="navbar__btn" onClick={handleFullScreen}>
         <img src={fullscreenIcon} alt="full-screen" />
       </Button>
