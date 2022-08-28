@@ -16,7 +16,9 @@ import {
 	snowIcon,
 	keyboardIcon,
 	underwaterIcon,
-	spaceIcon
+	spaceIcon,
+	windowRainIcon,
+	trainIcon
 } from '../assets/icons';
 
 export const NOISE_ICONS = [
@@ -38,4 +40,6 @@ export const NOISE_ICONS = [
 	{ label: 'Keyboard', icon: keyboardIcon },
 	{ label: 'Underwater', icon: underwaterIcon },
 	{ label: 'Space', icon: spaceIcon },
+	{ label: 'Window Rain', icon: windowRainIcon },
+	{ label: 'Train', icon: trainIcon },
 ];

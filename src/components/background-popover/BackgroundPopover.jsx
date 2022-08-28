@@ -28,9 +28,11 @@ import {
 import Kyoto from './Kyoto'
 import Dreamin from './Dreamin'
 import Honolulu from './Honolulu'
+import Train from './Train'
 
 const BackgroundPopover = () => {
   const background = useSelector(state => state.background.background)
+  console.log(background.set)
 
   const { noisesValue, isNoising } = useSelector(state => state.noises)
   const noisesRefs = useContext(AudioContext)
@@ -53,7 +55,8 @@ const BackgroundPopover = () => {
     if (
       type === 'rainCity' ||
       type === 'summerStorm' ||
-      type === 'rainForest'
+      type === 'rainForest' ||
+      type === 'windowRain'
     ) {
       dispatch(
         changeBackground({
@@ -188,6 +191,14 @@ const BackgroundPopover = () => {
       {background.set === 'honolulu' && (
         <>
           <Honolulu
+            scene={background.scene}
+            handleActiveNoise={handleActiveNoise}
+          />
+        </>
+      )}
+      {background.set === 'train' && (
+        <>
+          <Train
             scene={background.scene}
             handleActiveNoise={handleActiveNoise}
           />

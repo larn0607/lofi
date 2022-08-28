@@ -36,6 +36,9 @@ honoluluOut,
 kyotoThumb,
 kyotoPark,
 kyotoStreet,
+trainThumb,
+trainCity,
+trainCountry
 } from '../assets/images'
 
 const SETS = [
@@ -208,6 +211,20 @@ const SETS = [
       {
         scene: 'scene2',
 				img: honoluluOut,
+      }
+    ]
+  },
+  {
+    set: 'train',
+    img: trainThumb,
+    scenes: [
+      {
+        scene: 'scene1',
+				img: trainCity,
+      },
+      {
+        scene: 'scene2',
+				img: trainCountry,
       }
     ]
   },

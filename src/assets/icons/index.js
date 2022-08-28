@@ -55,6 +55,8 @@ import snowIcon from './noises/snow.svg';
 import keyboardIcon from './noises/keyboard.svg';
 import underwaterIcon from './noises/underwater.svg';
 import spaceIcon from './noises/space.svg';
+import windowRainIcon from './noises/window-rain.svg';
+import trainIcon from './noises/train.svg';
 
 import pixel from './pixel.png'
 import pixelHover from './pixel-hover.png'
@@ -117,5 +119,7 @@ export {
 	underwaterIcon,
 	spaceIcon,
 	volumeActiveIcon,
-	volumeMutedIcon
+	volumeMutedIcon,
+	windowRainIcon,
+	trainIcon
 };
