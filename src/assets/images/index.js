@@ -35,6 +35,10 @@ import honoluluOut from './honolulu/honolulu_out.png'
 import kyotoThumb from './kyoto/kyoto.png'
 import kyotoPark from './kyoto/kyotoPark.png'
 import kyotoStreet from './kyoto/kyotoStreet.png'
+import trainThumb from './train/train-thumb.png'
+import trainCity from './train/train.png'
+import trainCountry from './train/train-country.png'
+
 import logoGif from './logo.gif'
 
 export {
@@ -76,4 +80,7 @@ honoluluOut,
 kyotoThumb,
 kyotoPark,
 kyotoStreet,
+trainThumb,
+trainCity,
+trainCountry
 }

@@ -70,7 +70,7 @@ const Navbar = () => {
         <img src={fullscreenIcon} alt="full-screen" />
       </Button>
       {(['forest', 'summer'].includes(background.set) && background.scene === 'scene2') && <Pixel onClick={handleChangePixel} />}
-      {['chill_vibes', 'cafe', 'book_cafe', 'kyoto', 'honolulu'].includes(background.set) && (
+      {['chill_vibes', 'cafe', 'book_cafe', 'kyoto', 'honolulu', 'train'].includes(background.set) && (
         <Switch isToggle={isToggle} handleToggle={handleChangeDayNight} />
       )}
     </nav>

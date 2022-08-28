@@ -16,6 +16,7 @@ import { AudioContext } from '../../context/AudioProvider'
 
 const Noise = () => {
   const noisesRefs = useContext(AudioContext)
+  console.log(noisesRefs)
   const background = useSelector(state => state.background.background)
   const noisesVolume = useSelector(state => state.noises.noisesValue)
   const isNoising = useSelector(state => state.noises.isNoising)
@@ -62,10 +63,27 @@ const Noise = () => {
                         )
                       } else {
                         if (noisesRefs.current[14].volume) return
-
                         dispatch(
                           changeBackground({
                             snow: true
+                          })
+                        )
+                      }
+                    }
+                  }
+                  if (noisesRefs.current[index] === noisesRefs.current[18]) {
+                    if (background.set === 'train') {
+                      if (value === 0) {
+                        dispatch(
+                          changeBackground({
+                            rainy: false
+                          })
+                        )
+                      } else {
+                        if (noisesRefs.current[18].volume) return
+                        dispatch(
+                          changeBackground({
+                            rainy: true
                           })
                         )
                       }

@@ -19,7 +19,9 @@ const initialState = {
     snowValue: 0,
     keyboardValue: 0,
     underwaterValue: 0,
-    spaceValue: 0
+    spaceValue: 0,
+    windowRainValue: 0,
+    trainValue: 0
   },
   isNoising: {
     cityTraffic: false,
@@ -39,7 +41,9 @@ const initialState = {
     snow: false,
     keyboard: false,
     underwater: false,
-    space: false
+    space: false,
+    windowRain: false,
+    train: false,
   }
 }
 

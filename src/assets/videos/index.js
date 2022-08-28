@@ -64,6 +64,14 @@ import honoluluBeachDay from './honolulu/Honolulu+Beach+Day.mp4'
 import honoluluBeachNight from './honolulu/Honolulu+Beach+Night.mp4'
 import honoluluBeachRainDay from './honolulu/Honolulu+Beach+Rainy+Day.mp4'
 import honoluluBeachRainNight from './honolulu/Honolulu+Beach+Rainy+Night.mp4'
+import trainCityDay from './train/city-day.mp4'
+import trainCityRainy from './train/city-rainy.mp4'
+import trainCityNight from './train/city-night.mp4'
+import trainCityRainyNight from './train/city-rainy-night.mp4'
+import trainCountryDay from './train/country-day.mp4'
+import trainCountryRainy from './train/country-rainy.mp4'
+import trainCountryNight from './train/country-night.mp4'
+import trainCountryRainyNight from './train/country-rainy-night.mp4'
 
 export {
 bookCafeDayInRain,
@@ -132,5 +140,12 @@ honoluluBeachDay,
 honoluluBeachNight,
 honoluluBeachRainDay,
 honoluluBeachRainNight,
-
+trainCityDay,
+trainCityRainy,
+trainCityNight,
+trainCityRainyNight,
+trainCountryDay,
+trainCountryRainy,
+trainCountryNight,
+trainCountryRainyNight
 }
