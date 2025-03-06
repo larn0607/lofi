@@ -71,6 +71,77 @@ import m204 from './huykoh/20/[Official Audio] HYUKOH(혁오) - Ohio (128 kbps).
 import m205 from './huykoh/20/[Official Audio] HYUKOH(혁오) - Our Place (128 kbps).mp3'
 import m206 from './huykoh/20/[Official Audio] HYUKOH(혁오) - 위잉위잉 (Wi Ing Wi Ing) (128 kbps).mp3'
 
+import c1 from './chill/chill_1.mp3'
+import c2 from './chill/chill_2.mp3'
+import c3 from './chill/chill_3.mp3'
+import c4 from './chill/chill_4.mp3'
+import c5 from './chill/chill_5.mp3'
+import c6 from './chill/chill_6.mp3'
+import c7 from './chill/chill_7.mp3'
+import c8 from './chill/chill_8.mp3'
+import c9 from './chill/chill_9.mp3'
+import c10 from './chill/chill_10.mp3'
+import c11 from './chill/chill_11.mp3'
+import c12 from './chill/chill_12.mp3'
+import c13 from './chill/chill_13.mp3'
+import c14 from './chill/chill_14.mp3'
+import c15 from './chill/chill_15.mp3'
+import c16 from './chill/chill_16.mp3'
+import c17 from './chill/chill_17.mp3'
+import c18 from './chill/chill_18.mp3'
+import c19 from './chill/chill_19.mp3'
+import c20 from './chill/chill_20.mp3'
+import c21 from './chill/chill_21.mp3'
+import c22 from './chill/chill_22.mp3'
+import c23 from './chill/chill_23.mp3'
+import c24 from './chill/chill_24.mp3'
+
+import jz1 from './jazzy/jazzy_1.mp3'
+import jz2 from './jazzy/jazzy_2.mp3'
+import jz3 from './jazzy/jazzy_3.mp3'
+import jz4 from './jazzy/jazzy_4.mp3'
+import jz5 from './jazzy/jazzy_5.mp3'
+import jz6 from './jazzy/jazzy_6.mp3'
+import jz7 from './jazzy/jazzy_7.mp3'
+import jz8 from './jazzy/jazzy_8.mp3'
+import jz9 from './jazzy/jazzy_9.mp3'
+import jz10 from './jazzy/jazzy_10.mp3'
+import jz11 from './jazzy/jazzy_11.mp3'
+import jz12 from './jazzy/jazzy_12.mp3'
+import jz13 from './jazzy/jazzy_13.mp3'
+import jz14 from './jazzy/jazzy_14.mp3'
+import jz15 from './jazzy/jazzy_15.mp3'
+import jz16 from './jazzy/jazzy_16.mp3'
+import jz17 from './jazzy/jazzy_17.mp3'
+import jz18 from './jazzy/jazzy_18.mp3'
+import jz19 from './jazzy/jazzy_19.mp3'
+import jz20 from './jazzy/jazzy_20.mp3'
+import jz21 from './jazzy/jazzy_21.mp3'
+import jz22 from './jazzy/jazzy_22.mp3'
+import jz23 from './jazzy/jazzy_23.mp3'
+import jz24 from './jazzy/jazzy_24.mp3'
+import jz25 from './jazzy/jazzy_25.mp3'
+
+import sl1 from './sleepy/sleepy_1.mp3'
+import sl2 from './sleepy/sleepy_2.mp3'
+import sl3 from './sleepy/sleepy_3.mp3'
+import sl4 from './sleepy/sleepy_4.mp3'
+import sl5 from './sleepy/sleepy_5.mp3'
+import sl6 from './sleepy/sleepy_6.mp3'
+import sl7 from './sleepy/sleepy_7.mp3'
+import sl8 from './sleepy/sleepy_8.mp3'
+import sl9 from './sleepy/sleepy_9.mp3'
+import sl10 from './sleepy/sleepy_10.mp3'
+import sl11 from './sleepy/sleepy_11.mp3'
+import sl12 from './sleepy/sleepy_12.mp3'
+import sl13 from './sleepy/sleepy_13.mp3'
+import sl14 from './sleepy/sleepy_14.mp3'
+import sl15 from './sleepy/sleepy_15.mp3'
+import sl16 from './sleepy/sleepy_16.mp3'
+import sl17 from './sleepy/sleepy_17.mp3'
+import sl18 from './sleepy/sleepy_18.mp3'
+import sl19 from './sleepy/sleepy_19.mp3'
+
 
 export {
 lmlm,
@@ -137,4 +208,72 @@ m203,
 m204,
 m205,
 m206,
+c1,
+c2,
+c3,
+c4,
+c5,
+c6,
+c7,
+c8,
+c9,
+c10,
+c11,
+c12,
+c13,
+c14,
+c15,
+c16,
+c17,
+c18,
+c19,
+c20,
+c21,
+c22,
+c23,
+c24,
+jz1,
+jz2,
+jz3,
+jz4,
+jz5,
+jz6,
+jz7,
+jz8,
+jz9,
+jz10,
+jz11,
+jz12,
+jz13,
+jz14,
+jz15,
+jz16,
+jz17,
+jz18,
+jz19,
+jz20,
+jz21,
+jz22,
+jz23,
+jz24,
+jz25,
+sl1,
+sl2,
+sl3,
+sl4,
+sl5,
+sl6,
+sl7,
+sl8,
+sl9,
+sl10,
+sl11,
+sl12,
+sl13,
+sl14,
+sl15,
+sl16,
+sl17,
+sl18,
+sl19,
 }

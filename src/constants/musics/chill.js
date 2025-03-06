@@ -1,9 +1,55 @@
-const CHILL_MUSICS = []
+import {
+  c1,
+  c2,
+  c3,
+  c4,
+  c5,
+  c6,
+  c7,
+  c8,
+  c9,
+  c10,
+  c11,
+  c12,
+  c13,
+  c14,
+  c15,
+  c16,
+  c17,
+  c18,
+  c19,
+  c20,
+  c21,
+  c22,
+  c23,
+  c24,
+} from "../../assets/musics/";
 
-for(let i = 1; i <= 24; i++) {
-  CHILL_MUSICS.push(
-    `https://s3.us-east-2.amazonaws.com/lofi.co/lofi.co/tracks/chill/chill_${i}.mp3`
-  )
-}
+const CHILL_MUSICS = [
+  c1,
+  c2,
+  c3,
+  c4,
+  c5,
+  c6,
+  c7,
+  c8,
+  c9,
+  c10,
+  c11,
+  c12,
+  c13,
+  c14,
+  c15,
+  c16,
+  c17,
+  c18,
+  c19,
+  c20,
+  c21,
+  c22,
+  c23,
+  c24
+];
 
-export default CHILL_MUSICS
+export default CHILL_MUSICS;

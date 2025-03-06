@@ -16,7 +16,6 @@ import { AudioContext } from '../../context/AudioProvider'
 
 const Noise = () => {
   const noisesRefs = useContext(AudioContext)
-  console.log(noisesRefs)
   const background = useSelector(state => state.background.background)
   const noisesVolume = useSelector(state => state.noises.noisesValue)
   const isNoising = useSelector(state => state.noises.isNoising)

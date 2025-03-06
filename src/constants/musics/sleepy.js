@@ -1,9 +1,45 @@
-const SLEEPY_MUSICS = []
+import {
+  sl1,
+  sl2,
+  sl3,
+  sl4,
+  sl5,
+  sl6,
+  sl7,
+  sl8,
+  sl9,
+  sl10,
+  sl11,
+  sl12,
+  sl13,
+  sl14,
+  sl15,
+  sl16,
+  sl17,
+  sl18,
+  sl19,
+} from "../../assets/musics/";
 
-for(let i = 1; i <= 19; i++) {
-  SLEEPY_MUSICS.push(
-    `https://s3.us-east-2.amazonaws.com/lofi.co/lofi.co/tracks/sleepy/sleepy_${i}.mp3`
-  )
-}
+const SLEEPY_MUSICS = [
+  sl1,
+  sl2,
+  sl3,
+  sl4,
+  sl5,
+  sl6,
+  sl7,
+  sl8,
+  sl9,
+  sl10,
+  sl11,
+  sl12,
+  sl13,
+  sl14,
+  sl15,
+  sl16,
+  sl17,
+  sl18,
+  sl19,
+];
 
-export default SLEEPY_MUSICS
+export default SLEEPY_MUSICS;

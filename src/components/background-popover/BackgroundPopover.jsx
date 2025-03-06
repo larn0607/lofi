@@ -32,7 +32,6 @@ import Train from './Train'
 
 const BackgroundPopover = () => {
   const background = useSelector(state => state.background.background)
-  console.log(background.set)
 
   const { noisesValue, isNoising } = useSelector(state => state.noises)
   const noisesRefs = useContext(AudioContext)

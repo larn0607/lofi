@@ -1,9 +1,57 @@
-const JAZZY_MUSICS = []
+import {
+  jz1,
+  jz2,
+  jz3,
+  jz4,
+  jz5,
+  jz6,
+  jz7,
+  jz8,
+  jz9,
+  jz10,
+  jz11,
+  jz12,
+  jz13,
+  jz14,
+  jz15,
+  jz16,
+  jz17,
+  jz18,
+  jz19,
+  jz20,
+  jz21,
+  jz22,
+  jz23,
+  jz24,
+  jz25,
+} from "../../assets/musics/";
 
-for(let i = 1; i <= 25; i++) {
-  JAZZY_MUSICS.push(
-    `https://s3.us-east-2.amazonaws.com/lofi.co/lofi.co/tracks/jazzy/jazzy_${i}.mp3`
-  )
-}
+const JAZZY_MUSICS = [
+  jz1,
+  jz2,
+  jz3,
+  jz4,
+  jz5,
+  jz6,
+  jz7,
+  jz8,
+  jz9,
+  jz10,
+  jz11,
+  jz12,
+  jz13,
+  jz14,
+  jz15,
+  jz16,
+  jz17,
+  jz18,
+  jz19,
+  jz20,
+  jz21,
+  jz22,
+  jz23,
+  jz24,
+  jz25,
+];
 
-export default JAZZY_MUSICS
+export default JAZZY_MUSICS;
